@@ -60,6 +60,19 @@ public class MemberController {
         return "redirect:/";
     }
 
+    @GetMapping("/updateMemberForm")
+    public String updateMemberForm(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        MemberVO mvo = (MemberVO) session.getAttribute("loginUser");
+
+        if(mvo == null){
+            return "member/loginForm";
+        }else{
+            return "member/updateMember";
+        }
+    }
+
+
     @GetMapping("/kakaostart")
     public @ResponseBody String kakaostart(){
         String a = "<script type='text/javascript'>"

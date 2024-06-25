@@ -18,8 +18,8 @@
 				<div class="btn">
 					<input type="button" value="아이디 찾기" onClick="return findIdForm();">
 					<input type="button" value="비밀번호 찾기" onClick="return findPwdForm();"><br/>
-					<input type="button" value="KaKao" style="background:darkkhaki" onclick="location.href='kakaostart'" >
 				</div>
+				<input type="button" value="KaKao" style="background:yellow; width: 150px; height:50px; " onclick="location.href='kakaostart'" >
 				<div style="font-size:80%; font-weight:bold">${message}</div>
 				<div class="join-box"><br/>
 					<div class="join-message">
