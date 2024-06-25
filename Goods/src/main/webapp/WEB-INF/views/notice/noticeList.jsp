@@ -2,14 +2,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ include file="/WEB-INF/jsp/header.jsp"%>
+<%@ include file="../header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>공지사항</title>
-<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.min.css'/>">
-<link rel="stylesheet" href="<c:url value='/resources/css/notice/notice.css'/>">
+<link rel="stylesheet" href="../index/bootstrap.min.css'/>">
+<link rel="stylesheet" href="../notice/notice.css"/>
 </head>
 <body>
  		<div class="row d-flex justify-content-center mt-2 mb-5">
@@ -52,7 +52,7 @@
 					<div class="mb-3">
 					   	<ul id="notice-list">
 							<c:forEach var="notice" items="${noticeList}">
-								<a class="link" href="<c:url value='/noticeView.do?nseq=${notice.nseq}'/>">
+								<a class="link" href="noticeView?nseq=${notice.nseq}">
 									<li class="notice-item">
 										<div class="small-col">${notice.nseq}</div>
 								        <div class="small-col">${notice.adminId}</div>
@@ -96,7 +96,7 @@
 			</div>
 		</div>
 	</div>
-<script type="text/javascript" src="<c:url value='/resources/js/notice/notice.js'/>"></script>
+<%--<script type="text/javascript" src="<c:url value='/resources/js/notice/notice.js'/>"></script>--%>
 </body>
-<%@ include file="/WEB-INF/jsp/footer.jsp"%>
+<%@ include file="../footer.jsp"%>
 </html>

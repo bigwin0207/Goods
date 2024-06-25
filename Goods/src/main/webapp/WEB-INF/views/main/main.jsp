@@ -2,14 +2,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ include file="/WEB-INF/jsp/header.jsp"%>
+<%@ include file="../header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 
-<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.min.css'/>">
-<link rel="stylesheet" href="<c:url value='/resources/css/index/index.css'/>">
+<link rel="stylesheet" href="../index/bootstrap.min.css">
+<link rel="stylesheet" href="../index/index.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
 			<c:forEach items="${newlist}" var="gvo" varStatus="status">
 				<div class="product-box">
 					<div class="product-info">
-						<a href="goodsDetailView.do?gseq=${gvo.gseq}">
+						<a href="goodsDetailView?gseq=${gvo.gseq}">
 							<div class="product-image">
 								<c:forEach var="image" items="${gvo.imageList}">
 					                <c:set var="key" value="${gvo.gseq}${gvo.gname}${image.realname}"/>
@@ -42,7 +42,7 @@
 					<c:if test="${status.index < 8}">
 						<div class="product-box">
 							<div class="product-info">
-								<a href="goodsDetailView.do?gseq=${gvo.gseq}">
+								<a href="goodsDetailView?gseq=${gvo.gseq}">
 									<div class="product-image">
 										<c:forEach var="image" items="${gvo.imageList}">
 							                <c:set var="key" value="${gvo.gseq}${gvo.gname}${image.realname}"/>
@@ -58,7 +58,7 @@
 			</div>
 			<br><br>
 			<div class="view-all">
-				<a href="viewCategory.do?cgseq=0">전체보기</a>
+				<a href="viewCategory?cgseq=0">전체보기</a>
 			</div>
 			<br><br><br><br>
 		</div>
@@ -68,12 +68,12 @@
 		 	<div class="card-header d-flex justify-content-between">
 				<div>공지사항</div>
 				<div>
-					<a href="<c:url value='/noticeList.do'/>"><i class="bi bi-plus-circle"></i> 전체보기</a>
+					<a href="noticeList"><i class="bi bi-plus-circle"></i> 전체보기</a>
 				</div>
 		  	</div>
 			<ul class="list-group list-group-flush">
 				<c:forEach var="notice" items="${noticeList}">
-					<a class="link" href="<c:url value='/noticeView.do?nseq=${notice.nseq}'/>">
+					<a class="link" href="noticeView?nseq=${notice.nseq}">
 						<li class="list-group-item list-group-item-action d-flex li-item">
 							<div class="small-col">${notice.nseq}</div>
 				        	<div class="small-col">${notice.adminId}</div>
@@ -110,12 +110,12 @@
 				<div class="card-header d-flex justify-content-between">
 			  		<div>Q&A</div>
 					<div>
-			    		<a href="<c:url value='/qnaList.do'/>"><i class="bi bi-plus-circle"></i> 전체보기</a>
+			    		<a href="qnaList"><i class="bi bi-plus-circle"></i> 전체보기</a>
 					</div>
 			  	</div>
 			  	<ul class="list-group list-group-flush">
 			  		<c:forEach var="qna" items="${qnaList}">
-				  		<a class="link" href="<c:url value='/qnaView.do?qseq=${qna.qseq}'/>">
+				  		<a class="link" href="qnaView?qseq=${qna.qseq}">
 					  		<li class="list-group-item list-group-item-action d-flex li-item">
 					  			<div class="small-col">${qna.qseq}</div>
 					  			<div>
@@ -142,12 +142,12 @@
 				<div class="card-header d-flex justify-content-between">
 					<div>Review</div>
 					<div>
-						<a href="<c:url value='/reviewList.do'/>"><i class="bi bi-plus-circle"></i> 전체보기</a>
+						<a href="reviewList.do"><i class="bi bi-plus-circle"></i> 전체보기</a>
 					</div>
 				</div>
 				<ul class="list-group list-group-flush">
 			  		<c:forEach var="rev" items="${reviewList}">
-				  		<a class="link" href="<c:url value='/goodsDetailView.do?gseq=${rev.gseq}'/>">
+				  		<a class="link" href="goodsDetailView?gseq=${rev.gseq}">
 							<li class="list-group-item list-group-item-action d-flex li-item">
 								<div>
 									<c:choose>
@@ -178,7 +178,7 @@
 			</div>
 		</div>
 	</div>
-<script type="text/javascript" src='<c:url value = "/resources/js/goods/main.js"/>'></script>
+<script type="text/javascript" src="/script/goods/main.js"/></script>
 </body>
-<%@ include file="/WEB-INF/jsp/footer.jsp"%>
+<%@ include file="../footer.jsp"%>
 </html>
