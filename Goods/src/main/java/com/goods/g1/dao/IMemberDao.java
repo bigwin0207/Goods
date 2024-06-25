@@ -7,4 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface IMemberDao {
     MemberVO getMember(String userid);
     void insertMember(MemberVO mvo);
+    void updateMember(MemberVO mvo);
+    MemberVO checkEmail(String name, String email);
 }

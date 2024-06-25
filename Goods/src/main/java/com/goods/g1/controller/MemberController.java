@@ -8,23 +8,28 @@ import com.google.gson.Gson;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
+import org.apache.logging.log4j.message.Message;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.*;
+import java.net.Authenticator;
 import java.net.HttpURLConnection;
+import java.net.PasswordAuthentication;
 import java.net.URL;
+import java.util.Properties;
+import java.util.Random;
 
 @Controller
 public class MemberController {
     @Autowired
     MemberService ms;
+
+    private static final long CODE_EXPIRATION_DURATION = 3 * 60 * 1000;
 
     @GetMapping("/loginForm")
     public String loginForm() {
@@ -35,7 +40,7 @@ public class MemberController {
                         BindingResult result,
                         Model model,
                         HttpServletRequest request) {
-        String url = "main/main";
+        String url = "member/loginForm";
         if(result.getFieldError("userid")!=null)
             model.addAttribute("message", result.getFieldError("userid").getDefaultMessage());
         else if (result.getFieldError("pwd")!=null)
@@ -50,6 +55,8 @@ public class MemberController {
                 HttpSession session = request.getSession();
                 session.setAttribute("loginUser", mvo);
                 url = "redirect:/";
+            }else{
+            model.addAttribute("message", "관리자에게 문의하세요.");
             }
         }
         return url;
@@ -71,6 +78,119 @@ public class MemberController {
             return "member/updateMember";
         }
     }
+    @PostMapping("/updateMember")
+    public String updateMember(@ModelAttribute("dto") @Valid MemberVO membervo,
+                               BindingResult result,
+                               @RequestParam(value = "pwdCheck", required = false) String pwdCheck,
+                               Model model,
+                               HttpServletRequest request){
+        String url = "member/updateMember";
+        if(result.getFieldError("pwd") != null){
+            model.addAttribute("message", result.getFieldError("pwd").getDefaultMessage());
+        }else if(result.getFieldError("name") != null){
+            model.addAttribute("message", result.getFieldError("name").getDefaultMessage());
+        }else if(result.getFieldError("phone") != null){
+            model.addAttribute("message", result.getFieldError("phone").getDefaultMessage());
+        }else if(result.getFieldError("email") != null){
+            model.addAttribute("message", result.getFieldError("email").getDefaultMessage());
+        }else if(pwdCheck == null || !membervo.getPwd().equals(pwdCheck)){
+            model.addAttribute("message","비밀번호 확인이 일치하지 않습니다.");
+        }else{
+            ms.updateMember(membervo);
+            HttpSession session = request.getSession();
+            session.setAttribute("loginUser", membervo);
+            url = "redirect:/updatemember";
+        }
+        return url;
+    }
+
+    @GetMapping("/findIdForm")
+    public String findIdForm() {
+        return "member/findIdForm";
+    }
+
+   /* @PostMapping("/findId")
+    public String findId(@ModelAttribute("dto") @Valid MemberVO membervo,
+                         BindingResult result,
+                         HttpServletRequest request
+                         ,Model model) {
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+
+        MemberVO mvo = ms.checkEmail(name, email);
+        if (mvo == null) {
+            model.addAttribute("message", "등록된 회원이 아닙니다");
+            return "member/findIdForm";
+        } else if (mvo.getEmail() == null || mvo.getName() == null || !mvo.getEmail().equals(email)
+                || !mvo.getName().equals(name)) {
+            model.addAttribute("message", "등록된 회원이 아닙니다");
+        } else if (mvo.getEmail().equals(email) && mvo.getName().equals(name)) {
+            model.addAttribute("message", "인증번호가 전송되었습니다");
+            String verificationCode = generateVerificationCode();
+
+            // 이메일 전송
+            sendEmail(email, verificationCode);
+
+            // 이메일 전송 후 작업 수행
+            // 예: 세션에 인증 코드 저장 등
+            HttpSession session = request.getSession();
+            session.setAttribute("verificationCode", verificationCode);
+            session.setAttribute("verificationCodeExpiration",
+                    System.currentTimeMillis() + CODE_EXPIRATION_DURATION);
+            session.setAttribute("name", name);
+            session.setAttribute("email", email);
+        }
+        return "";
+    }
+    // 랜덤한 6자리 숫자로 인증 코드 생성
+    private static String generateVerificationCode() {
+        Random random = new Random();
+        int code = 100000 + random.nextInt(900000);
+        return String.valueOf(code);
+    }
+
+    // 이메일 전송
+    private static void sendEmail(String email, String verificationCode) {
+        Properties properties = new Properties();
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.ssl.enable", "true"); // SSL 활성화
+        properties.put("mail.smtp.host", "smtp.gmail.com"); // SMTP 호스트
+        properties.put("mail.smtp.port", "465"); // SMTP 포트 (SSL 사용 시)
+
+        Session session = Session.getInstance(properties, new Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(SENDER_EMAIL, SENDER_PASSWORD);
+            }
+        });
+
+        try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(SENDER_EMAIL));
+            // 이메일 주소가 null 이 아닌 경우에만 이메일 주소를 설정합니다.
+            if (email != null && !email.isEmpty()) {
+                message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
+                // 이메일 제목 설정
+                message.setSubject("이메일 인증 코드");
+
+                // 이메일 본문 설정
+                String emailContent = "안녕하세요, 이메일 인증 코드는 다음과 같습니다: " + verificationCode;
+                message.setText(emailContent);
+
+                // 이메일 전송
+                Transport.send(message);
+
+                System.out.println("이메일이 성공적으로 전송되었습니다.");
+            } else if (email == null || email.isEmpty()) {
+                // 이메일 주소가 null 이거나 비어있는 경우에 대한 처리를 수행합니다.
+                System.out.println("이메일 주소가 올바르지 않습니다.");
+
+                return; // 메서드 종료
+            }
+
+        }
+
+    }*/
 
 
     @GetMapping("/kakaostart")

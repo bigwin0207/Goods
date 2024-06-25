@@ -18,4 +18,13 @@ public class MemberService {
     public void insertMember(MemberVO mvo) {
         mdao.insertMember(mvo);
     }
+
+    public void updateMember(MemberVO membervo) {
+        mdao.updateMember(membervo);
+    }
+
+    public MemberVO checkEmail(String name, String email) {
+        MemberVO mvo = mdao.checkEmail(name,email);
+        return mvo;
+    }
 }

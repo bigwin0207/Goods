@@ -29,6 +29,6 @@
 			</c:if>
 	</div>
 </div>
-<script src="<c:url value='/resources/js/member/newID.js'/>"></script>
+<script src="<c:url value='/resources/member/newID.js'/>"></script>
 </body>
 </html>

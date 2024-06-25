@@ -3,9 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="../header.jsp"%>
-
-<link rel="stylesheet" href="resources/css/update.css">
-<meta charset="UTF-8">
+<link rel="stylesheet" href="../member/update.css">
 <section id="section">
 		<article id="article">
 			<form action="updateMember" method="post" name="formm" id="updateForm">
@@ -45,6 +43,7 @@
 				<div class="field">
 					<label>Extra Address</label><input type="text" id="sample6_extraAddress" value="${dto.address3}" name="address3" />
 				</div>
+
 				<!-- 다음 카카오 도로명 주소 검색을 위한 자바스크립트 코드들 -->
 				<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
@@ -109,5 +108,5 @@
 		</form>
 		</article>
 </section>
-
+<script src="/script/member/userLogin.js"></script>
 <%@ include file="../footer.jsp"%>

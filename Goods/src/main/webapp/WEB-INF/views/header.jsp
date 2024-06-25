@@ -7,9 +7,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Of Flower</title>
-<link rel="stylesheet" href="../index/header_footer2.css">
+<link rel="stylesheet" href="index/header_footer2.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="member/loginForm.css">
+<link rel="stylesheet" href="member/findId_PwdForm.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
@@ -63,5 +65,5 @@
 			</div>
 		</div>
 	</header>
-<script src=../js/goods/header.js"></script>
+<script src="script/goods/header.js"></script>
 </body>

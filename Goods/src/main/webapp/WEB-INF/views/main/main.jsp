@@ -8,8 +8,8 @@
 <head>
 <meta charset="UTF-8">
 
-<link rel="stylesheet" href="/resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="/resources/css/index/index.css">
+<link rel="stylesheet" href="../index/bootstrap.min.css">
+<link rel="stylesheet" href="../index/index.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
@@ -58,7 +58,7 @@
 			</div>
 			<br><br>
 			<div class="view-all">
-				<a href="viewCategory.do?cgseq=0">전체보기</a>
+				<a href="viewCategory?cgseq=0">전체보기</a>
 			</div>
 			<br><br><br><br>
 		</div>
@@ -178,7 +178,7 @@
 			</div>
 		</div>
 	</div>
-<script type="text/javascript" src="../goods/main.js"/></script>
+<script type="text/javascript" src="/script/goods/main.js"/></script>
 </body>
 <%@ include file="../footer.jsp"%>
 </html>

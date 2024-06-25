@@ -8,8 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항</title>
-<link rel="stylesheet" href="/resources/css/bootstrap.min.css'/>">
-<link rel="stylesheet" href="/resources/notice/notice.css"/>
+<link rel="stylesheet" href="../index/bootstrap.min.css'/>">
+<link rel="stylesheet" href="../notice/notice.css"/>
 </head>
 <body>
  		<div class="row d-flex justify-content-center mt-2 mb-5">
@@ -52,7 +52,7 @@
 					<div class="mb-3">
 					   	<ul id="notice-list">
 							<c:forEach var="notice" items="${noticeList}">
-								<a class="link" href="/noticeView?nseq=${notice.nseq}">
+								<a class="link" href="noticeView?nseq=${notice.nseq}">
 									<li class="notice-item">
 										<div class="small-col">${notice.nseq}</div>
 								        <div class="small-col">${notice.adminId}</div>
