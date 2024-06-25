@@ -2,13 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ include file="/WEB-INF/jsp/header.jsp"%>    
+<%@ include file="../header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>category</title>
-<link rel="stylesheet" href="<c:url value='/resources/css/index/index.css'/>">
+<link rel="stylesheet" href="/css/index/index.css">
 </head>
 <body>
 
@@ -18,9 +18,9 @@
 				<c:forEach items="${categoryList}" var="gvo">
 					<div class="product-box">			
 						<div class="product-info">
-							<a href="goodsDetailView.do?gseq=${gvo.gseq}">
+							<a href="goodsDetailView?gseq=${gvo.gseq}">
 								<div class="category-image">									
-									<img alt="${gvo.imageList[0].realname}" src="<c:url value='/imageWrite.do?folder=${gvo.gseq}${gvo.gname}&realName=${gvo.imageList[0].realname}'/>">									
+									<img alt="${gvo.imageList[0].realname}" src="imageWrite?folder=${gvo.gseq}${gvo.gname}&realName=${gvo.imageList[0].realname}">
 								</div>		
 								${gvo.gname} - <fmt:formatNumber type="currency" value="${gvo.sprice}"></fmt:formatNumber>				
 							</a>
@@ -71,5 +71,5 @@
 	</div>
 
 </body>
-<%@ include file="/WEB-INF/jsp/footer.jsp"%>
+<%@ include file="../footer.jsp"%>
 </html>

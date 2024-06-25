@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+.list-group {
+	list-style-type: none;
+	border-radius: 5px;
+}
+
+.list-item {
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+.item-header {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.item-header>div:not(:last-child) {
+	border-right: 1px solid #ddd;
+}
+
+.item-header div {
+    padding: 5px;
+}
+
+.item-header .num {
+    flex: 0.5;
+    text-align: center;
+}
+
+.item-header .subject {
+    flex: 4;
+    padding-left: 20px;
+}
+
+.item-header .author {
+    flex: 1;
+    text-align: center;
+}
+
+.item-header .time {
+    flex: 1.5;
+    text-align: center;
+}
+
+.item-header .buttons {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.item-content {
+    padding: 5px;
+}
+
+.item-author > img {
+	width: 25px;
+	height: 25px;
+}
+
+.pre-styled {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 16px;
+}
+
+textarea {
+	resize: none;
+}
+
+.page-link {
+  color: #000; 
+  background-color: #fff;
+  border: 1px solid #ccc; 
+}
+
+.page-item.active .page-link {
+ z-index: 1;
+ color: white;
+ font-weight:bold;
+ background-color: #3a3a3a;
+ border-color: #6c757d;
+ 
+}
+
+.page-link:focus, .page-link:hover {
+  color: white;
+  background-color: #6c757d; 
+  border-color: #ccc;
+}
