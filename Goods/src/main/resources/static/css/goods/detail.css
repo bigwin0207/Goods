@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 .list-group {
-	list-style-type: none;
-	border-radius: 5px;
+    list-style-type: none;
+    border-radius: 5px;
 }
 
 .list-item {
@@ -16,7 +16,7 @@
 }
 
 .item-header>div:not(:last-child) {
-	border-right: 1px solid #ddd;
+    border-right: 1px solid #ddd;
 }
 
 .item-header div {
@@ -55,8 +55,8 @@
 }
 
 .item-author > img {
-	width: 25px;
-	height: 25px;
+    width: 25px;
+    height: 25px;
 }
 
 .pre-styled {
@@ -65,26 +65,26 @@
 }
 
 textarea {
-	resize: none;
+    resize: none;
 }
 
 .page-link {
-  color: #000; 
-  background-color: #fff;
-  border: 1px solid #ccc; 
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #ccc;
 }
 
 .page-item.active .page-link {
- z-index: 1;
- color: white;
- font-weight:bold;
- background-color: #3a3a3a;
- border-color: #6c757d;
- 
+    z-index: 1;
+    color: white;
+    font-weight:bold;
+    background-color: #3a3a3a;
+    border-color: #6c757d;
+
 }
 
 .page-link:focus, .page-link:hover {
-  color: white;
-  background-color: #6c757d; 
-  border-color: #ccc;
+    color: white;
+    background-color: #6c757d;
+    border-color: #ccc;
 }

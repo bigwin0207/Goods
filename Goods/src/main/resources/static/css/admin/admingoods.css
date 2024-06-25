@@ -91,7 +91,7 @@
 }
 
 .search-row{
-	
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -107,18 +107,18 @@
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin: 2px 5px;	
+    margin: 2px 5px;
 }
 
 .search-form{
-	width: 50%;
+    width: 50%;
     display: flex;
     justify-content: flex-end;
-	
+
 }
 
 .search-button input[type="text"] {
-	width: 100%;
+    width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -127,12 +127,12 @@
 }
 
 .search-button input[type="button"]{
-	width: 100%;
+    width: 100%;
     padding: 8px;
     border: 1px solid #3a3a3a;
     border-radius: 5px;
     margin: 3px 5px;
-    height: 45px;	
+    height: 45px;
 }
 
 
@@ -191,7 +191,7 @@
 }
 
 /* 텍스트 인풋 스타일 */
-.inputfield input[type="text"], 
+.inputfield input[type="text"],
 .inputfield input[type="file"] {
     width: calc(100% - 20px);
     padding: 8px;
@@ -249,7 +249,7 @@ input[type="button"]:hover {
 }
 
 .img-use-container{
-	display: flex;
+    display: flex;
     justify-content: space-around;
     align-items: center;
 }
