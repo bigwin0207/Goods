@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+.d-flex col{
+    align-content:center;
+    justify-content: center;
+}
+
+ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.li-header, .li-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.li-header {
+    background-color: #f0f0f0;
+}
+
+.li-header div {
+    font-weight: bold;
+}
+
+.li-item {
+    background-color: #ffffff;
+    position: relative
+}
+
+.li-item img {
+    width: 100px;
+    height: 100px;
+}
+
+.li-item:hover {
+    background-color: #d0d0d0;
+}
+
+.li-header div, .li-item div {
+    flex: 1;
+    text-align: center;
+}
+
+.li-header .small-col, .li-item .small-col {
+    flex: 0.3;
+}
+
+#badge {
+    width: 30px;
+    height: auto;
+}
+
+.link {
+    display: block;
+    height: 100%;
+    width:100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    color: black;
+}
+
+#switchBtn {
+    background-color: black;
+    color: white;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 100%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+    line-height: 20px;
+}
+
+#switchBtn:hover{
+    background-color: #939393;
+}
+
+#discardBtn {
+    background-color: #c74747;
+    color: #fff;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 100%;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    line-height: 20px;
+}
+
+#discardBtn:hover{
+    background-color: #d58181;
+}
+
+.page-link {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: white;
+    font-weight:bold;
+    background-color: #3a3a3a;
+    border-color: #6c757d;
+
+}
+
+.page-link:focus, .page-link:hover {
+    color: white;
+    background-color: #6c757d;
+    border-color: #ccc;
+}

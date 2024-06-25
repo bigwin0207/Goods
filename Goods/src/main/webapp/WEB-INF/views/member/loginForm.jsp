@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/jsp/header.jsp"%>
-<link rel="stylesheet" href="resources/css/loginForm.css">
+<%@ include file="../header.jsp"%>
+<link rel="stylesheet" href="../css/loginForm.css">
 <div>
 <section id="loginForm">
 		<article id="login">
-			<form method="post" action="login.do" name="loginForm">
+			<form method="post" action="login" name="loginForm">
 			<h2>LOGIN</h2>
 			<div class="loginbox">
 				<div class="logininput">
@@ -33,5 +33,5 @@
 		</article>
 </section>
 </div>
-<%@ include file="/WEB-INF/jsp/footer.jsp"%>
+<%@ include file="../footer.jsp"%>
 <script src="<c:url value='/resources/js/member/userLogin.js'/>"></script>

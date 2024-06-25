@@ -1,0 +1,121 @@
+form {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+
+#login {
+    display: flex;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    width: 100%;
+    justify-content: center;
+}
+
+.loginbox{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 150px auto;
+    justify-content: center;
+}
+
+.logininput {
+    margin: 0px 5px;
+    flex: 2;
+}
+
+.logininput input[type="text"],
+.logininput input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 2px 5px;
+}
+
+.loginbtn {
+    display: flex;
+}
+
+.loginbtn input[type="submit"],
+.loginbtn input[type="button"] {
+    padding: 8px 20px;
+    margin-left: 5px;
+    background-color: #3a3a3a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.loginbtn input[type="submit"]:hover,
+.loginbtn input[type="button"]:hover {
+    background-color: #868686; /* 호버 시 배경색 변경 */
+}
+
+
+.btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 45px;
+    margin-left: 10px;
+    margin-bottom: 50px;
+    padding: 8px 5px;
+    color: #3a3a3a;
+}
+
+.btn input{
+    flex: 1;
+    margin: 2px;
+    background-color: #d7d7d7;
+    border: none;
+    color: #252525;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn input:hover{
+    background-color: #252525;
+    color: #d1d1d1;
+}
+
+
+.join-box{
+    width: 90%;
+}
+
+.join-message{
+    text-align: center;
+    font-size: 80%;
+    margin-bottom: 10px;
+    margin-top: 10.0em;
+}
+
+.join-box input{
+    margin: 2px;
+    background-color: #7a7a7a;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 45px;
+    width: 100%;
+}
+
+.join-box input:hover{
+    background-color: #383838;
+    color: #fff;
+}
