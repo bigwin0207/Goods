@@ -20,14 +20,15 @@ public class MemberController {
 
     @GetMapping("/loginForm")
     public String loginForm() {
-        return "member/login";
+        return "member/loginForm";
     }
+
     @PostMapping("/login")
     public String login(@ModelAttribute("dto") @Valid MemberVO membervo,
                         BindingResult result,
                         Model model,
                         HttpServletRequest request) {
-        String url = "member/login";
+        String url = "member/loginForm";
         if(result.getFieldError("userid")!=null)
             model.addAttribute("message", result.getFieldError("userid").getDefaultMessage());
         else if (result.getFieldError("pwd")!=null)

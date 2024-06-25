@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/jsp/header.jsp"%>
-<link rel="stylesheet" href="resources/css/loginForm.css">
+<%@ include file="../header.jsp"%>
+<link rel="stylesheet" href="/css/loginForm.css">
 <div>
 <section id="loginForm">
 		<article id="login">
@@ -33,5 +33,5 @@
 		</article>
 </section>
 </div>
-<%@ include file="/WEB-INF/jsp/footer.jsp"%>
-<script src="<c:url value='/resources/js/member/userLogin.js'/>"></script>
+<%@ include file="../footer.jsp"%>
+<script src="/js/member/userLogin.js"></script>

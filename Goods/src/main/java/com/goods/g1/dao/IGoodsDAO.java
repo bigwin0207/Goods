@@ -17,4 +17,6 @@ public interface IGoodsDAO {
     List<GoodsVO> getCategoryList(@Param("cgseq") String cgseq, @Param("paging") MPaging paging);
 
     List<GoodsImageVO> getImageList(@Param("gseq") int gseq);
+
+    GoodsVO getGoods(@Param("gseq") int gseq);
 }

@@ -5,7 +5,7 @@ function goMain(){
 	
 	if(main != null){
 		main.addEventListener("click", ()=>{
-			location.href="main.do";
+			location.href="main";
 		})
 	}
 }
@@ -23,7 +23,7 @@ function addCart() {
             if (isNaN(quantity) || quantity < 1) {
                 alert("장바구니 최소수량은 1개입니다.");
             } else {
-                document.goodsform.action = "addCart.do";
+                document.goodsform.action = "addCart";
                 document.goodsform.method = "post";
                 document.goodsform.submit();
             }
@@ -56,7 +56,7 @@ function addWishlist(){
 	
 	if (addwish != null){
 		addwish.addEventListener("click", function(){
-			document.goodsform.action = "addWish.do";
+			document.goodsform.action = "addWish";
 			document.goodsform.method = "post";
 			document.goodsform.submit();			
 		})			
@@ -78,7 +78,7 @@ function goOrder() {
             if (isNaN(quantity) || quantity < 1) {
                 alert("주문 최소수량은 1개입니다.");
             } else {
-                document.goodsform.action = "addCart.do";
+                document.goodsform.action = "orderNow";
                 document.goodsform.method = "post";
                 document.goodsform.submit();
             }
@@ -94,7 +94,7 @@ function viewGoodsList (){
 	
 	if (goodslist != null){
 		goodslist.addEventListener("click", ()=>{
-			document.goodsform.action = "adminGoodsView.do";
+			document.goodsform.action = "adminGoodsView";
 			document.goodsform.method = "post";
 			document.goodsform.submit();
 			
@@ -110,7 +110,7 @@ function update_Goods(){
 	
 	if(updateGoods != null){
 		updateGoods.addEventListener("click", ()=>{
-			document.goodsform.action = "adminGoodsUpdateForm.do";
+			document.goodsform.action = "adminGoodsUpdateForm";
 			document.goodsform.method = "post";
 			document.goodsform.submit();
 		})
@@ -123,7 +123,7 @@ function update_Goods(){
 	
 	if(updateGoods != null){
 		updateGoods.addEventListener("click", ()=>{
-			document.goodsform.action = "adminGoodsUpdateForm.do";
+			document.goodsform.action = "adminGoodsUpdateForm";
 			document.goodsform.method = "post";
 			document.goodsform.submit();
 		})
@@ -138,7 +138,7 @@ function delete_Goods(){
 	
 	if(deleteGoods != null){
 		deleteGoods.addEventListener("click", ()=>{
-			document.goodsform.action = "adminGoodsDelete.do";
+			document.goodsform.action = "adminGoodsDelete";
 			document.goodsform.method = "post";
 			document.goodsform.submit();
 		})		
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function getPageInfo() {
-	fetch('/GoodsShop/pageInfo.do', {
+	fetch('/GoodsShop/pageInfo', {
 		method : 'POST',
 		headers: {
 			'Content-Type': 'application/json;charset=utf-8'
@@ -288,7 +288,7 @@ if (reviewWriteBtn != null) {
 	reviewWriteBtn.addEventListener("click", () => {
 		if (subject.value !== '' && content.value !== '') {
 			if(confirm("리뷰 작성하시겠습니까?")) {
-				fetch('/GoodsShop/reviewWrite.do', {
+				fetch('/GoodsShop/reviewWrite', {
 					method : 'POST',
 					headers: {
 						'Content-Type': 'application/json;charset=utf-8'
@@ -372,7 +372,7 @@ function reviewUpdate(e) {
 				timeElement.innerHTML = currentTime();
 				let rseq = getRseq(e);
 	
-				fetch('/GoodsShop/reviewUpdate.do', {
+				fetch('/GoodsShop/reviewUpdate', {
 					method : 'POST',
 					headers: {
 						'Content-Type': 'application/json;charset=utf-8'
@@ -431,7 +431,7 @@ function reviewDelete(e) {
 	if(confirm("정말로 삭제하시겠습니까?")) {
 		let rseq = getRseq(e);
 
-		fetch('/GoodsShop/reviewDelete.do', {
+		fetch('/GoodsShop/reviewDelete', {
 			method : 'POST',
 			headers: {
 				'Content-Type': 'application/json;charset=utf-8'
@@ -519,7 +519,7 @@ function asynGetContent() {
 	param.page = paging.currentPage;
 	param.gseq = parseInt(gseq.value);
 
-	fetch('/GoodsShop/getContent.do', {
+	fetch('/GoodsShop/getContent', {
 		method : 'POST',
 		headers: {
 			'Content-Type': 'application/json;charset=utf-8'

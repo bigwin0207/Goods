@@ -10,10 +10,10 @@ public class CartVO {
 	private int cseq;
 	private int gseq;
 	private String userid;
-	private String username;
-	private String goodsname;
+	private String name;
+	private String gname;
 	private int quantity;
-	private int sprice;
+	private int s_price;
 	private int totalprice;	
 	private String thum;
 	private String realname;

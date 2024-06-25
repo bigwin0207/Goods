@@ -30,4 +30,8 @@
         select * from goodsimage where gseq = #{gseq}
     </select>
 
+    <select id="getGoods" resultType="com.goods.g1.dto.GoodsVO">
+        select * from goods where gseq = #{gseq}
+    </select>
+
 </mapper>

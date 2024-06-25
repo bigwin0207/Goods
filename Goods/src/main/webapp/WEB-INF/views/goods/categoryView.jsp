@@ -22,7 +22,7 @@
 								<div class="category-image">									
 									<img alt="${gvo.imageList[0].realname}" src="imageWrite?folder=${gvo.gseq}${gvo.gname}&realName=${gvo.imageList[0].realname}">
 								</div>		
-								${gvo.gname} - <fmt:formatNumber type="currency" value="${gvo.sprice}"></fmt:formatNumber>				
+								${gvo.gname} - <fmt:formatNumber type="currency" value="${gvo.s_price}"></fmt:formatNumber>
 							</a>
 						</div>
 					</div>

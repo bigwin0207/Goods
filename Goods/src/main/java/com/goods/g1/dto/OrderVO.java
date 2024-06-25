@@ -11,17 +11,17 @@ public class OrderVO {
 	private Date indate;
 	private String userid;
 	private String name;
-	private String zipcode;
+	private String zip_code;
 	private String address;
-	private String daddress;
+	private String d_address;
 	private String phone;
 	private int gseq;
 	private String gname;
 	private int quantity;
 	private int totalprice;
-	private String status;
-	private String thum;
 	private int osseq;
+	private String status;
+	private int gradenum;
 	private float sale;
 	private String realname;
 }

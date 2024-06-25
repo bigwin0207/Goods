@@ -4,13 +4,14 @@ import com.goods.g1.dao.IGoodsDAO;
 import com.goods.g1.dto.GoodsImageVO;
 import com.goods.g1.dto.GoodsVO;
 import com.goods.g1.dto.MemberVO;
+import com.goods.g1.dto.ReviewVO;
 import com.goods.g1.util.MPaging;
+import com.goods.g1.util.Paging;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -69,18 +70,51 @@ public class GoodsService {
 
             // 사용자별 가격표시
             if (loginUser != null) {
-                int oldPrice = vo.getSprice();
+                int oldPrice = vo.getS_price();
                 int newPrice = 0;
 
                 newPrice = (int) Math.ceil(oldPrice - (oldPrice * loginUser.getSale()));
 
-                vo.setSprice(newPrice);
+                vo.setS_price(newPrice);
             }
         }
 
         result.put("categoryList", categoryList);
         result.put("cgseq", cgseq);
         result.put("paging", paging);
+
+        return result;
+    }
+
+    public HashMap<String, Object> viewGoodsDetail(int gseq, HttpServletRequest request) {
+        HashMap<String, Object> result = new HashMap<>();
+
+        HttpSession session = request.getSession();
+        MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
+
+        GoodsVO gvo = gdao.getGoods(gseq);
+        List<GoodsImageVO> image = gdao.getImageList(gseq);
+        gvo.setImageList(image);
+
+        if (loginUser != null) {
+            int oldPrice = gvo.getS_price();
+            int newPrice = 0;
+
+            newPrice = (int) Math.ceil(oldPrice - (oldPrice * loginUser.getSale()));
+
+            gvo.setS_price(newPrice);
+        }
+
+        result.put("goods", gvo);
+
+
+
+/*        ReviewDAO rDAO = ReviewDAO.getInstance();
+        int total = rDAO.getGoodsReviewTotal(gseq);
+        int currentPage = 1;
+
+        Paging paging = new Paging(currentPage, 10, total);
+        List<ReviewVO> reviewList = rDAO.getGoodsReviewList(gseq, 10, paging.getCurrentPage());*/
 
         return result;
     }

@@ -65,5 +65,5 @@
 			</div>
 		</div>
 	</header>
-<script src="/js/goods/header.js'/>"></script>
+<script src="/script/goods/header.js"></script>
 </body>

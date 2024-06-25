@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.goods.g1.dao.IOrderDAO">
+    <insert id="insertOrder">
+        insert into orders (userid) values (#{userid})
+    </insert>
+
+    <select id="lookupMaxOseq" resultType="_int">
+        select max(oseq) from orders where userid = #{userid}
+    </select>
+
+    <insert id="insertOrderDetail">
+        insert into order_detail (oseq, gseq, quantity, totalprice, osseq) values (#{oseq}, #{ovo.gseq}, #{ovo.quantity}, #{ovo.totalprice}, 1)
+    </insert>
+
+</mapper>

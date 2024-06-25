@@ -10,9 +10,9 @@ public class GoodsVO {
     private int gseq;
     private String gname;
     private int cgseq;
-    private int oprice;
-    private int sprice;
-    private int mprice;
+    private int o_price;
+    private int s_price;
+    private int m_price;
     private String content;
     private int bestyn;
     private int useyn;
