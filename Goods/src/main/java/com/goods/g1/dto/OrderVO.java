@@ -11,9 +11,10 @@ public class OrderVO {
 	private Date indate;
 	private String userid;
 	private String name;
-	private String zip_code;
-	private String address;
-	private String d_address;
+	private String zip_num;
+	private String address1;
+	private String address2;
+	private String address3;
 	private String phone;
 	private int gseq;
 	private String gname;

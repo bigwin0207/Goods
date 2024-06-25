@@ -39,9 +39,10 @@ public class OrderService {
             OrderVO ovo = new OrderVO();
             ovo.setUserid(mvo.getUserid());
             ovo.setName(mvo.getName());
-            ovo.setZip_code(mvo.getZip_code());
-            ovo.setAddress(mvo.getAddress());
-            ovo.setD_address(mvo.getD_address());
+            ovo.setZip_num(mvo.getZip_num());
+            ovo.setAddress1(mvo.getAddress1());
+            ovo.setAddress2(mvo.getAddress2());
+            ovo.setAddress3(mvo.getAddress3());
             ovo.setPhone(mvo.getPhone());
             ovo.setGseq(gseqInt);
             ovo.setGname(gvo.getGname());
@@ -74,9 +75,10 @@ public class OrderService {
         OrderVO ovo = new OrderVO();
         ovo.setUserid(mvo.getUserid());
         ovo.setName(mvo.getName());
-        ovo.setZip_code(mvo.getZip_code());
-        ovo.setAddress(mvo.getAddress());
-        ovo.setD_address(mvo.getD_address());
+        ovo.setZip_num(mvo.getZip_num());
+        ovo.setAddress1(mvo.getAddress1());
+        ovo.setAddress2(mvo.getAddress2());
+        ovo.setAddress3(mvo.getAddress3());
         ovo.setPhone(mvo.getPhone());
         ovo.setGseq(gseq);
         ovo.setGname(gvo.getGname());

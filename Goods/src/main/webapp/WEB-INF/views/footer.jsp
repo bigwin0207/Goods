@@ -16,7 +16,7 @@
 				<div class="footer_content">
 					<div class="footer_contentbox flex-2">
 						<div class="footer_titlebox-1">
-							<a href="main.do">
+							<a href="main">
 								<img src="../images/logo_.png">
 							</a>
 						</div>

@@ -2,14 +2,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ include file="/WEB-INF/jsp/header.jsp"%>
+<%@ include file="../header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Q&A 리스트</title>
-<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.min.css'/>">
-<link rel="stylesheet" href="<c:url value='/resources/css/qna/qna.css'/>">
+<link rel="stylesheet" href="../index/bootstrap.min.css">
+<link rel="stylesheet" href="../css/qna/qna.css">
 </head>
 <body>
 <div class="row d-flex justify-content-center mb-5">
@@ -67,7 +67,7 @@
                   		<div>
                   			<ul id="qna-list">
 							<c:forEach var="qna" items="${qnaList}">
-							<a class="link" href="<c:url value='/qnaView.do?qseq=${qna.qseq}'/>">
+							<a class="link" href="qnaView?qseq=${qna.qseq}">
 								<li class="qna-item">
 									<div class="d-flex justify-content-center align-items-center">
 										<div>${qna.qseq}</div>
@@ -160,7 +160,7 @@
                   		<div>
                   			<ul id="my-qna-list">
 								<c:forEach var="qna" items="${qnaMyList}">
-								<a class="link" href="<c:url value='/qnaView.do?qseq=${qna.qseq}'/>">
+								<a class="link" href="qnaView?qseq=${qna.qseq}">
 									<li class="qna-item">
 										<div class="d-flex justify-content-center align-items-center">
 											<div>${qna.qseq}</div>
@@ -237,14 +237,14 @@
               	</div>
               	<div class="d-flex justify-content-end">
 	              	<c:if test="${not empty loginUser}">
-							<a class="btn btn-secondary" href="<c:url value='qnaWriteForm.do'/>">작성하기</a>
+							<a class="btn btn-secondary" href="qnaWriteForm">작성하기</a>
 					</c:if>
 				</div>
             </div>
     	</div>
 	</div>
 </div>
-<script type="text/javascript" src="<c:url value='/resources/js/qna/qna.js'/>"></script>
+<script type="text/javascript" src="script/qna/qna.js"></script>
 </body>
-<%@ include file="/WEB-INF/jsp/footer.jsp"%>
+<%@ include file="../footer.jsp"%>
 </html>

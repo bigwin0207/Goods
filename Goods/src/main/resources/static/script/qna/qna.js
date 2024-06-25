@@ -68,7 +68,7 @@ document.getElementById('search').addEventListener('change', () => {
 });
 
 function getPageInfo() {	
-	fetch('/GoodsShop/pageInfo.do', {
+	fetch('/Goods/pageInfo', {
 		method : 'POST',
 		headers: {
 			'Content-Type': 'application/json;charset=utf-8'

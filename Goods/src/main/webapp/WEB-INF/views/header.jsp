@@ -38,9 +38,9 @@
 						</c:choose>
 					</div>
 					<div class="right-links">
-						<a href="noticeList.do">NOTICE</a> <a
-							href="qnaList.do">Q&A</a> <a
-							href="reviewList.do">REVIEW</a>
+						<a href="noticeList">NOTICE</a> <a
+							href="qnaList">Q&A</a> <a
+							href="reviewList">REVIEW</a>
 					</div>
 					<div class="w-5"></div>
 				</div>
