@@ -2,12 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>    
-<%@ include file="/WEB-INF/jsp/header.jsp"%>
+<%@ include file="../header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="<c:url value='/resources/css/listView.css'/>">
+<link rel="stylesheet" href="/css/listView.css">
 </head>
 <body>
 <div class="view-container">
@@ -35,9 +35,9 @@
                     <c:forEach items="${cartlist}" var="cvo">
                         <li class="list-row">
                             <div class="list-imgbox">
-                                <img src="<c:url value='/imageWrite.do?folder=${cvo.gseq}${cvo.goodsname}&realName=${cvo.realname}'/>">
+                                <img src="imageWrite?folder=${cvo.gseq}${cvo.gname}&realName=${cvo.realname}">
                             </div>
-                            <div class="listfield">${cvo.goodsname}</div>
+                            <div class="listfield">${cvo.gname}</div>
                             <div class="listfield">${cvo.quantity} 개</div>
                             <div class="listfield"><fmt:formatNumber type="currency" value="${cvo.totalprice}"></fmt:formatNumber></div>
                             <div class="listfield">
@@ -59,7 +59,7 @@
 </div>	
 	
 	
-<script type="text/javascript" src='<c:url value="/resources/js/goods/cartlist.js"/>'></script>
+<script type="text/javascript" src='/script/goods/cartlist.js'></script>
 </body>
-<%@ include file="/WEB-INF/jsp/footer.jsp"%>
+<%@ include file="../footer.jsp"%>
 </html>

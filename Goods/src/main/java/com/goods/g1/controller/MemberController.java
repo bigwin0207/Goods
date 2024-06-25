@@ -35,6 +35,7 @@ public class MemberController {
     public String loginForm() {
         return "member/loginForm";
     }
+
     @PostMapping("/login")
     public String login(@ModelAttribute("dto") @Valid MemberVO membervo,
                         BindingResult result,

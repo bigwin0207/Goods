@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.goods.g1.dao.IGoodsDAO">
+    <select id="getAllCount">
+        select count(*)
+        from goods_view g1
+            inner join (
+                select gseq, min(giseq) as min_giseq
+                from goods_view
+                group by gseq
+            ) g2 on g1.gseq = g2.gseq and g1.giseq = g2.min_giseq
+            where ${fieldName} like concat('%', #{fieldValue}, '%')
+            order by g1.gseq
+    </select>
+
+    <select id="getBestList" resultType="com.goods.g1.dto.GoodsVO">
+        select * from bestlist_view limit 20
+    </select>
+
+    <select id="getCategoryList">
+        select * from goods_view g1 inner join (select gseq, min(giseq) as min_giseq from goods_view group by gseq) g2
+            on g1.gseq = g2.gseq and g1.giseq = g2.min_giseq
+                 where g1.cgseq = #{cgseq} and g1.useyn = 1 limit #{paging.displayRow} offset #{paging.startNum}
+    </select>
+
+    <select id="getImageList">
+        select * from goodsimage where gseq = #{gseq}
+    </select>
+
+    <select id="getGoods" resultType="com.goods.g1.dto.GoodsVO">
+        select * from goods where gseq = #{gseq}
+    </select>
+
+</mapper>
