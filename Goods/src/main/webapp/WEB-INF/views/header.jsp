@@ -22,13 +22,13 @@
 					<div class="left-links">
 						<c:choose>
 							<c:when test="${empty loginUser}">
-								<a href="loginForm.do">로그인</a>
-								<a href="joinPage.do">회원가입</a>
+								<a href="loginForm">로그인</a>
+								<a href="joinPage">회원가입</a>
 							</c:when>
 							<c:otherwise>
 								<a href="#">${loginUser.name}(${loginUser.userid})</a>
 								<a href="logout.do">로그아웃</a>
-								<a href="<c:url value='/updateMemberForm.do'/>">정보수정</a>
+								<a href="<c:url value='/updateMemberForm'/>">정보수정</a>
 								<a href="<c:url value='/viewCartlist.do'/>">장바구니</a>
 								<a href="<c:url value='/viewWishlist.do'/>">찜목록</a>
 								<a href="<c:url value='/viewOrderList.do'/>">주문목록</a>
