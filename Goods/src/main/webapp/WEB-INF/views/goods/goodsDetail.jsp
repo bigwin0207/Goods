@@ -2,11 +2,11 @@
    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ include file="/WEB-INF/jsp/header.jsp"%>
+<%@ include file="../header.jsp"%>
 
-<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.min.css'/>">
-<link rel="stylesheet" href="<c:url value='/resources/css/goods/detail.css'/>">
-<link rel="stylesheet" href="<c:url value='/resources/css/goods.css'/>">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/goods/detail.css">
+<link rel="stylesheet" href="/css/goods.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
@@ -20,14 +20,14 @@
 			<div class="detail-imagebox">
 				<div class="imgbox">
 				<img alt="${goodsDetail.imageList[0].realname}"
-					src="<c:url value='/imageWrite.do?folder=${goodsDetail.gseq}${goodsDetail.gname}&realName=${goodsDetail.imageList[0].realname}'/>">
+					src="imageWrite?folder=${goodsDetail.gseq}${goodsDetail.gname}&realName=${goodsDetail.imageList[0].realname}">
 				</div>
 			</div>
 
 			<div class="detail-infobox">
 				<div class="detail-infotext">
 					<div class="detail-title">${goodsDetail.gname}</div>
-					<div class="detail-field">가격 : <fmt:formatNumber type="currency" value="${goodsDetail.sprice}"></fmt:formatNumber></div>
+					<div class="detail-field">가격 : <fmt:formatNumber type="currency" value="${goodsDetail.s_price}"></fmt:formatNumber></div>
 					<div class="detail-field">
 						수량 : <input id="input_quantity" name="input_quantity" type="number"
 							min="1" value="1">
@@ -62,7 +62,7 @@
 				<div>
 					<c:forEach items="${goodsDetail.imageList}" var="img">
 						<div>
-							<img src="<c:url value='/imageWrite.do?folder=${goodsDetail.gseq}${goodsDetail.gname}&realName=${img.realname}'/>">
+							<img src="imageWrite?folder=${goodsDetail.gseq}${goodsDetail.gname}&realName=${img.realname}">
 						</div>
 					</c:forEach>
 				</div>
@@ -89,7 +89,7 @@
 					            <div class="item-header">
 					                <div class="num"><span class="item-num">no.${vo.rseq}</span></div>
 					                <div class="subject"><span class="item-subject">${vo.subject}</span></div>
-					                <div class="author"><span class="item-author"><img src="<c:url value='/resources/image/badge/${vo.grade}.png'/>">${vo.userid}</span></div>
+					                <div class="author"><span class="item-author"><img src="resources/image/badge/${vo.grade}.png">${vo.userid}</span></div>
 					                <div class="time"><span class="item-time"><fmt:formatDate value="${vo.indate}" type="both" pattern="yyyy-MM-dd HH:mm:SS" /></span></div>
 					                <div class="buttons">
 					                	<c:if test="${loginUser.userid eq vo.userid}">
@@ -148,5 +148,5 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src='<c:url value = "/resources/js/goods/detail.js"/>'></script>
-<%@ include file="/WEB-INF/jsp/footer.jsp"%>
+<script type="text/javascript" src='/script/goods/detail.js'></script>
+<%@ include file="../footer.jsp"%>

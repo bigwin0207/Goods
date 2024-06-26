@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Of Flower</title>
-<link rel="stylesheet" href="resources/css/header_footer2.css">
+<link rel="stylesheet" href="/css/header_footer2.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -22,30 +22,30 @@
 					<div class="left-links">
 						<c:choose>
 							<c:when test="${empty loginUser}">
-								<a href="loginForm.do">로그인</a>
-								<a href="joinPage.do">회원가입</a>
+								<a href="loginForm">로그인</a>
+								<a href="joinPage">회원가입</a>
 							</c:when>
 							<c:otherwise>
 								<a href="#">${loginUser.name}(${loginUser.userid})</a>
-								<a href="logout.do">로그아웃</a>
-								<a href="<c:url value='/updateMemberForm.do'/>">정보수정</a>
-								<a href="<c:url value='/viewCartlist.do'/>">장바구니</a>
-								<a href="<c:url value='/viewWishlist.do'/>">찜목록</a>
-								<a href="<c:url value='/viewOrderList.do'/>">주문목록</a>
+								<a href="logout">로그아웃</a>
+								<a href="updateMemberForm">정보수정</a>
+								<a href="viewCartlist">장바구니</a>
+								<a href="viewWishlist">찜목록</a>
+								<a href="viewOrderList">주문목록</a>
 							</c:otherwise>
 						</c:choose>
 					</div>
 					<div class="right-links">
-						<a href="noticeList.do">NOTICE</a> <a
-							href="qnaList.do">Q&A</a> <a
-							href="reviewList.do">REVIEW</a>
+						<a href="noticeList">NOTICE</a> <a
+							href="qnaList">Q&A</a> <a
+							href="reviewList">REVIEW</a>
 					</div>
 					<div class="w-5"></div>
 				</div>
 			</div>
 			<div id="logo">
-				<a href="main.do"> <img
-					src="<c:url value='/resources/image/logo_.png'/>" alt="">
+				<a href="main">
+					<img src="image/logo_.png">
 				</a>
 			</div>
 			<div class="menu_bar">
@@ -65,5 +65,5 @@
 			</div>
 		</div>
 	</header>
-<script src="<c:url value='/resources/js/goods/header.js'/>"></script>
+<script src="/script/goods/header.js"></script>
 </body>

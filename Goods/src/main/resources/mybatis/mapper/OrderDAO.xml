@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.goods.g1.dao.IOrderDAO">
+    <insert id="insertOrder">
+        insert into orders (userid) values (#{userid})
+    </insert>
+
+    <select id="lookupMaxOseq" resultType="_int">
+        select max(oseq) from orders where userid = #{userid}
+    </select>
+
+    <insert id="insertOrderDetail">
+        insert into order_detail (oseq, gseq, quantity, totalprice, osseq) values (#{oseq}, #{ovo.gseq}, #{ovo.quantity}, #{ovo.totalprice}, 1)
+    </insert>
+
+    <select id="getAllCount">
+        select count(*) as cnt from order_view o1 inner join (select oseq, min(odseq) as min_odseq from order_view group by oseq) o2 on o1.oseq = o2.oseq and o1.odseq = o2.min_odseq
+        where o1.${fieldName} like concat('%', #{userid}, '%')
+    </select>
+
+    <select id="selectOrderList">
+        select * from order_view o1 inner join (
+            select oseq, min(odseq) as min_odseq from order_view group by oseq
+        ) o2 on o1.oseq = o2.oseq and o1.odseq = o2.min_odseq
+        where userid = #{userid} order by o1.oseq desc
+        limit #{paging.displayRow} offset ${paging.startNum}
+    </select>
+
+    <select id="selectOrderDetail" resultType="com.goods.g1.dto.OrderVO">
+        select * from order_view where oseq = #{oseq}
+    </select>
+
+
+</mapper>

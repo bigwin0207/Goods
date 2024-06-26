@@ -2,12 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ include file="/WEB-INF/jsp/header.jsp"%>
+<%@ include file="../header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="<c:url value='/resources/css/listView.css'/>">
+<link rel="stylesheet" href="/css/listView.css">
 </head>
 <body>
 
@@ -37,7 +37,7 @@
 						<c:forEach items="${orderProductList}" var="ovo">
 							<li class="list-row">
 								<div class="list-imgbox">
-									<img src="<c:url value='/imageWrite.do?folder=${ovo.gseq}${ovo.gname}&realName=${ovo.realname}'/>">
+									<img src="imageWrite?folder=${ovo.gseq}${ovo.gname}&realName=${ovo.realname}">
 								</div>
 								<div class="listfield">${ovo.gname}</div>
 								<div class="listfield">${ovo.quantity} 개</div>
@@ -62,8 +62,8 @@
 		</form>
 	</div>	
 	
-	<script type="text/javascript" src='<c:url value="/resources/js/goods/order.js"/>'></script>
+	<script type="text/javascript" src='script/goods/order.js'></script>
 </body>
 
-<%@ include file="/WEB-INF/jsp/footer.jsp"%>
+<%@ include file="../footer.jsp"%>
 </html>

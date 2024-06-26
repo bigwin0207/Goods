@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.goods.g1.dao.ICartDAO">
+    <select id="getWishList" resultType="com.goods.g1.dto.CartVO">
+        select*from cart_view c1
+            inner join (
+            select gseq, min(giseq) as min_giseq
+            from cart_view
+            group by gseq
+            ) c2 on c1.gseq = c2.gseq and c1.giseq = c2.min_giseq
+		where c1.userid = #{userid}
+		order by c1.cseq desc
+    </select>
+
+    <select id="selectWish" resultType="_int">
+        select count(*) from cart_view where userid = #{userid} and gseq = #{gseq}
+    </select>
+
+    <insert id="insertWish">
+        insert into cart (userid, gseq, quantity, totalprice) values (#{userid}, #{gvo.gseq}, 1, #{gvo.s_price})
+    </insert>
+
+    <delete id="deleteWish">
+        delete from cart where gseq = #{gseq} and userid = #{userid}
+    </delete>
+
+</mapper>

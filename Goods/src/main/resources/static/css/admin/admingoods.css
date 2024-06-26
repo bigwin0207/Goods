@@ -1,0 +1,283 @@
+@charset "UTF-8";
+
+
+/* 전체 컨테이너 */
+.admin-goods-container{
+    margin: 20px auto;
+    width: 90%;
+    font-family: "Noto Sans KR", sans-serif;
+    margin-bottom: 150px;
+}
+
+/* 컨테이너 타이틀 */
+.container-title {
+    margin-top: 50px;
+    font-size: 180%;
+    margin-bottom: 20px;
+}
+
+/* 리스트 타이틀 행 */
+.titlerow {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+/* 리스트 타이틀 필드 */
+.titlefield {
+    flex: 1;
+    text-align: center;
+}
+
+/* 리스트 박스 */
+.listbox {
+    list-style: none;
+    padding: 0;
+}
+
+/* 리스트 아이템 행 */
+.list-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.listfield{
+    flex: 1;
+    text-align: center;
+}
+
+.listbox a{
+    text-decoration: none;
+    color: black;
+}
+
+.admin-goods-thumbnail{
+    height: auto;
+    overflow: hidden;
+    margin-right: 20px;
+    flex: 1;
+}
+
+.admin-goods-thumbnail img{
+    width: 100%;
+    height: auto;
+}
+
+.input-button{
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+/* 버튼 공통 스타일 */
+.input-button input[type="button"] {
+    background-color: #e2e2e2;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0px 2px;
+}
+
+/* 버튼 호버 스타일 */
+.input-button input[type="button"]:hover {
+    background-color: #3a3a3a;
+    color: #fff;
+}
+
+.search-row{
+	
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.search-select{
+
+}
+
+.search-select select{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 2px 5px;	
+}
+
+.search-form{
+	width: 50%;
+    display: flex;
+    justify-content: flex-end;
+	
+}
+
+.search-button input[type="text"] {
+	width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 2px 5px;
+    height: 45px;
+}
+
+.search-button input[type="button"]{
+	width: 100%;
+    padding: 8px;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+    margin: 3px 5px;
+    height: 45px;	
+}
+
+
+/* ---------------------------------------------- */
+
+
+.admin-container-title{
+    margin-top: 50px;
+    font-size: 180%;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.admin-goods-write-container{
+    margin: 100px auto;
+    width: 90%;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.admin-goods-inner-container{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.input-label{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.labelfield{
+    height: 48px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    margin: 0px 5px;
+}
+
+.inputfield{
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* 텍스트 인풋 스타일 */
+.inputfield input[type="text"], 
+.inputfield input[type="file"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 2px 5px;
+}
+
+.inputfield input[type="text"]:focus,
+.inputfield input[type="file"]:focus {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 2px 5px;
+}
+
+/* radio 인풋 스타일 */
+
+.inputfield input[type="radio"]{
+
+}
+
+/* select 스타일 */
+.inputfield select{
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 2px 5px;
+}
+
+input[type="submit"],
+input[type="button"] {
+    padding: 8px 20px;
+    margin-left: 5px;
+    background-color: #3a3a3a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: #868686; /* 호버 시 배경색 변경 */
+}
+
+.admin-btn{
+    width: 45%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.img-use-container{
+	display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.update-imgbox{
+
+}
+
+.update-imgbox img{
+    width: 150px;
+}
+
+
+.imgfield{
+
+}
+
+
+
+
+
+
+/* ---------------------------------------------- */
+
+
+.flex-1{
+    flex: 1;
+}
+
+

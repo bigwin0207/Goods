@@ -17,7 +17,7 @@
 					<div class="footer_contentbox flex-2">
 						<div class="footer_titlebox-1">
 							<a href="main.do">
-								<img src="<c:url value='/resources/image/logo_.png'/>">
+								<img src="image/logo_.png">
 							</a>
 						</div>
 						<div class="footer_text">
@@ -57,7 +57,7 @@
 				</div>
 				<div class="footer_adminbox">
 					<a href="adminLoginForm.do">
-						<img src="<c:url value='/resources/image/adminlogo.png'/>">
+						<img src="/image/adminlogo.png">
 					</a>
 				</div>
 			</footer>
