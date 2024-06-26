@@ -4,9 +4,9 @@ function marginCal() {
 	if (cal_Margin != null) {
 		cal_Margin.forEach(function (e) {
 			e.addEventListener("keyup", () => {
-				let oprice = document.goodsWriteForm.oprice.value;
-				let sprice = document.goodsWriteForm.sprice.value;
-				document.goodsWriteForm.mprice.value = sprice - oprice;
+				let oprice = document.goodsWriteForm.o_price.value;
+				let sprice = document.goodsWriteForm.s_price.value;
+				document.goodsWriteForm.m_price.value = sprice - oprice;
 			})
 		})
 	}
@@ -24,9 +24,9 @@ function go_update() {
 
 			if (form.gname.value == "") {
 				alert("상품명을 입력해주세요");
-			} else if (form.oprice.value == "") {
+			} else if (form.o_price.value == "") {
 				alert("원가를 입력해주세요");
-			} else if (form.sprice.value == "") {
+			} else if (form.s_price.value == "") {
 				alert("판매가를 입력해주세요");
 			} else if (form.content.value == "") {
 				alert("상품설명을 입력해주세요");
@@ -54,18 +54,18 @@ function go_insert() {
 
 			if (form.gname.value == "") {
 				alert("상품명을 입력해주세요");
-			} else if (form.oprice.value == "") {
+			} else if (form.o_price.value == "") {
 				alert("원가를 입력해주세요");
-			} else if (form.sprice.value == "") {
+			} else if (form.s_price.value == "") {
 				alert("판매가를 입력해주세요");
 			} else if (form.content.value == "") {
 				alert("상품설명을 입력해주세요");
-			} else if (form.image.value == "") {
+			} else if (document.querySelector("#hiddenFields").value == "") {
 				alert("파일이미지를 등록해주세요");
 			} else if (form.cgseq.value == "0") {
 				alert("카테고리를 선택해주세요");
 			} else {
-				document.goodsWriteForm.action = "adminInsertGoods.do";
+				document.goodsWriteForm.action = "adminInsertGoods";
 				document.goodsWriteForm.method = "post";
 				document.goodsWriteForm.submit();
 			}
@@ -76,9 +76,21 @@ function go_insert() {
 go_insert();
 
 
+function inputFile(){
+	let inputFile = document.querySelector("#fileInputButton");
+	if(inputFile != null){
+		inputFile.addEventListener("click", ()=>{
+			document.querySelector("#fileInputHidden").click();
+		})
+	}
+}
 
-	$(document).ready(function () {
-	$('#fileInput').change(function () {
+inputFile();
+
+
+
+/*$(document).ready(function () {
+	$('#fileInputHidden').change(function () {
 		let formselect = $("#fileUploadForm")[0];
 		let formdata = new FormData(formselect);
 
@@ -86,20 +98,55 @@ go_insert();
 			url: "/uploadTemps",
 			type: "POST",
 			enctype: "multipart/form-data",
-			data: formdata,  // FormData 객체를 전송 데이터로 사용
-			contentType: false,  // 파일 업로드 시 content type을 false로 유지
-			processData: false,  // 데이터 처리를 위해 processData를 false로 유지
+			data: formdata,
+			contentType: false,
+			processData: false,
 			success: function (data) {
 				if (data.STATUS == 1) {
 					$("#prev-img").append('<img src=imageWrite?folder=temps&realName=' + data.SAVEFILENAME + '/>');
+					$('#hiddenFields').append('<input type="hidden" name="uploadedFiles" value="' + data.SAVEFILENAME + '"/>');
 				}
 			},
 			error: function (xhr, status, error) {
 				alert("파일 업로드 실패");
-				console.log("Error message: " + error);  // 실패 시 에러 메시지 출력
+				console.log("Error message: " + error);
+			}
+		});
+	});
+});*/
+
+$(document).ready(function () {
+	$('#fileInputHidden').change(function () {
+		let formselect = $("#fileUploadForm")[0];
+		let formdata = new FormData(formselect);
+
+		// 선택된 여러 파일들을 FormData에 추가
+		let files = $('#fileInputHidden')[0].files;
+		for (let i = 0; i < files.length; i++) {
+			formdata.append('image[]', files[i]); // 'image[]'로 각 파일을 추가 (서버에서 배열 형태로 처리할 수 있어야 함)
+		}
+
+		$.ajax({
+			url: "/uploadTemps",
+			type: "POST",
+			enctype: "multipart/form-data",
+			data: formdata,
+			contentType: false,
+			processData: false,
+			success: function (data) {
+				if (data.STATUS == 1) {
+					// 서버에서 전달된 파일명 배열을 처리하여 이미지 태그와 히든 필드 생성
+					data.SAVEFILENAMES.forEach(function (filename) {
+						$("#prev-img").append('<img src="imageWrite?folder=temps&realName=' + filename + '"/>');
+						$('#hiddenFields').append('<input type="hidden" name="uploadedFiles[]" value="' + filename + '"/>');
+					});
+				}
+			},
+			error: function (xhr, status, error) {
+				alert("파일 업로드 실패");
+				console.log("Error message: " + error);
 			}
 		});
 	});
 });
-
 

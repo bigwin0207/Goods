@@ -207,6 +207,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 2px 5px;
+    outline: none;
 }
 
 /* radio 인풋 스타일 */

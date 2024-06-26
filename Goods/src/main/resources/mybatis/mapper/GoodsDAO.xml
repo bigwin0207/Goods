@@ -7,13 +7,13 @@
     <select id="getAllCount">
         select count(*)
         from goods_view g1
-            inner join (
-                select gseq, min(giseq) as min_giseq
-                from goods_view
-                group by gseq
-            ) g2 on g1.gseq = g2.gseq and g1.giseq = g2.min_giseq
-            where ${fieldName} like concat('%', #{fieldValue}, '%')
-            order by g1.gseq
+                 inner join (
+            select gseq, min(giseq) as min_giseq
+            from goods_view
+            group by gseq
+        ) g2 on g1.gseq = g2.gseq and g1.giseq = g2.min_giseq
+        where ${fieldName} like concat('%', #{fieldValue}, '%')
+        order by g1.gseq
     </select>
 
     <select id="getBestList" resultType="com.goods.g1.dto.GoodsVO">
@@ -22,8 +22,8 @@
 
     <select id="getCategoryList">
         select * from goods_view g1 inner join (select gseq, min(giseq) as min_giseq from goods_view group by gseq) g2
-            on g1.gseq = g2.gseq and g1.giseq = g2.min_giseq
-                 where g1.cgseq = #{cgseq} and g1.useyn = 1 limit #{paging.displayRow} offset #{paging.startNum}
+                                               on g1.gseq = g2.gseq and g1.giseq = g2.min_giseq
+        where g1.cgseq = #{cgseq} and g1.useyn = 1 limit #{paging.displayRow} offset #{paging.startNum}
     </select>
 
     <select id="getImageList">
@@ -36,13 +36,28 @@
 
     <select id="getAllGoods">
         select * from goods_view g1 inner join (select gseq, min(giseq) as min_giseq from goods_view group by gseq) g2
-            on g1.gseq = g2.gseq and g1.giseq = g2.min_giseq
-            where gname like concat('%', #{gname}, '%')
-            order by g1.gseq limit #{paging.displayRow} offset #{paging.startNum}
+                                               on g1.gseq = g2.gseq and g1.giseq = g2.min_giseq
+        where gname like concat('%', #{gname}, '%')
+        order by g1.gseq limit #{paging.displayRow} offset #{paging.startNum}
     </select>
 
     <select id="getAllCategories" resultType="com.goods.g1.dto.GoodsVO">
         select * from category
     </select>
+
+    <insert id="insertGoods" parameterType="com.goods.g1.dto.GoodsVO">
+        insert into goods (gname, cgseq, o_price, s_price, m_price, content, bestyn, useyn)
+        values (#{gname}, #{cgseq}, #{o_price}, #{s_price}, #{m_price}, #{content}, #{bestyn}, #{useyn})
+    </insert>
+
+    <select id="lookupMaxGseq">
+        select max(gseq) from goods
+    </select>
+
+    <insert id="writeGoodsImages" parameterType="com.goods.g1.dto.GoodsImageVO">
+        insert into goodsimage (gseq, oriname, realname, filesize) values (#{param1}, #{param2}, #{param3}, #{param4})
+    </insert>
+
+
 
 </mapper>

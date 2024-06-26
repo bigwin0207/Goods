@@ -23,4 +23,11 @@ public interface IGoodsDAO {
     List<GoodsVO> getAllGoods(@Param("gname") String gname, MPaging paging);
 
     List<GoodsVO> getAllCategories();
+
+    void insertGoods(GoodsVO gvo);
+
+    int lookupMaxGseq();
+
+    void writeGoodsImages(int gseq, String oriname, String realname, Long fileSize);
+
 }
