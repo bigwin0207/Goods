@@ -2,10 +2,15 @@ package com.goods.g1.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class UtilController {
@@ -37,6 +42,60 @@ public class UtilController {
             e.printStackTrace();
         }
     }
+
+    @Value("${file.upload-dir}/temps")
+    private String uploadDir;
+
+
+    @PostMapping("uploadTemps")
+    @ResponseBody
+    public Map<String, Object> uploadTemps(@RequestParam("image") MultipartFile[] files, HttpServletRequest request) {
+
+        System.out.println("uploadTemps 메소드 실행됨...");
+
+        Map<String, Object> response = new HashMap<>();
+
+
+        File uploadDirFile = new File(uploadDir);
+        if (!uploadDirFile.exists()) {
+            if (!uploadDirFile.mkdirs()) {
+                response.put("STATUS", 0);
+                response.put("ERROR", "Failed to create upload directory");
+                return response;
+            }
+        }
+
+        for (MultipartFile file : files) {
+            if (file.isEmpty()) {
+                response.put("STATUS", 0);
+                response.put("ERROR", "No file selected");
+                return response;
+            }
+
+            String oriname = file.getOriginalFilename();
+            if (!oriname.equals("")) {
+                String realname = oriname + String.valueOf(System.currentTimeMillis());
+                String uploadPath = uploadDir + File.separator + realname;
+
+                try {
+                    file.transferTo(new File(uploadPath));
+                    response.put("STATUS", 1);
+                    response.put("SAVEFILENAME", realname);
+                    response.put("image", oriname);
+
+                } catch (IOException e) {
+                    response.put("STATUS", 0);
+                    response.put("ERROR", e.getMessage());
+                    return response;
+                }
+            }
+
+        }
+
+        return response;
+
+    }
+
 
 
 }

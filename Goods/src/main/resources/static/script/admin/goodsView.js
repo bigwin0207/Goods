@@ -45,7 +45,7 @@ function toggle_best() {
 				alert("상태를 변경할 상품을 선택해주세요");
 			} else {
 				document.goodsViewForm.method = "post";
-				document.goodsViewForm.action = "adminBestToggle.do"
+				document.goodsViewForm.action = "adminBestToggle"
 				document.goodsViewForm.submit();
 			}
 		})
@@ -78,7 +78,7 @@ function toggle_use() {
 				alert("상태를 변경할 상품을 선택해주세요");
 			} else {
 				document.goodsViewForm.method = "post";
-				document.goodsViewForm.action = "adminUseYnToggle.do"
+				document.goodsViewForm.action = "adminUseYnToggle"
 				document.goodsViewForm.submit();
 			}
 		})
@@ -110,7 +110,7 @@ function delete_goods() {
 			if (count == 0) {
 				alert("삭제할 상품을 선택해주세요");
 			} else {
-				document.goodsViewForm.action = "adminGoodsDelete.do"
+				document.goodsViewForm.action = "adminGoodsDelete"
 				document.goodsViewForm.method = "post";
 				document.goodsViewForm.submit();
 			}
@@ -125,10 +125,10 @@ function category_view() {
 	if (cate != null) {
 		cate.addEventListener("change", () => {
 			if (cate.value != 0) {
-				document.goodsViewForm.action = "adminCategoryView.do";
+				document.goodsViewForm.action = "adminCategoryView";
 
 			} else {
-				document.goodsViewForm.action = "adminGoodsView.do";
+				document.goodsViewForm.action = "adminGoodsView";
 
 			}
 				document.goodsViewForm.method = "post";
@@ -157,7 +157,7 @@ function enter_Search(){
 	
 	input.addEventListener("keypress", (e)=>{
 		if(e.key === "Enter"){
-			document.goodsViewForm.action = "adminGoodsSearch.do?page=1";
+			document.goodsViewForm.action = "adminGoodsSearch?page=1";
 			document.goodsViewForm.method = "post";
 			document.goodsViewForm.submit();
 		}

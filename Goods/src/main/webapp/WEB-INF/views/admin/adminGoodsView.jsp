@@ -7,10 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Goods</title>
-<link rel="stylesheet" href="<c:url value='/resources/bootstrap.min.css'/>">
+<link rel="stylesheet" href="/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<link rel="stylesheet" href="<c:url value='/resources/css/admin.css'/>">
-<link rel="stylesheet" href="<c:url value='/resources/css/admin/admingoods.css'/>">
+<link rel="stylesheet" href="/css/admin.css">
+<link rel="stylesheet" href="/css/admin/admingoods.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
 	<div id="layoutSidenav">
 		<!-- side -->
 		<jsp:include page="../fix/admin/sidemenu.jsp" />
-	<form name="goodsViewForm" id="goodsViewForm">
+	<form name="goodsViewForm" id="goodsViewForm" method="post">
 		<div id="layoutSidenav_content">
 			<div class="admin-goods-container">
 				<div class="container-title">
@@ -118,11 +118,11 @@
 										<div class="listfield" onclick="viewGoodsDetail(${agvo.gseq})">${agvo.gseq}</div>
 										<div class="listfield" onclick="viewGoodsDetail(${agvo.gseq})">${agvo.gname}</div>
 										<div class="admin-goods-thumbnail" onclick="viewGoodsDetail(${agvo.gseq})" >
-											<img src="<c:url value='/imageWrite.do?folder=${agvo.gseq}${agvo.gname}&realName=${agvo.realname}'/>">
+											<img src="imageWrite?folder=${agvo.gseq}${agvo.gname}&realName=${agvo.realname}">
 										</div>
-										<div class="listfield" onclick="viewGoodsDetail(${agvo.gseq})">${agvo.oprice}</div>
-										<div class="listfield" onclick="viewGoodsDetail(${agvo.gseq})">${agvo.sprice}</div>
-										<div class="listfield" onclick="viewGoodsDetail(${agvo.gseq})">${agvo.mprice}</div>
+										<div class="listfield" onclick="viewGoodsDetail(${agvo.gseq})">${agvo.o_price}</div>
+										<div class="listfield" onclick="viewGoodsDetail(${agvo.gseq})">${agvo.s_price}</div>
+										<div class="listfield" onclick="viewGoodsDetail(${agvo.gseq})">${agvo.m_price}</div>
 										<div class="listfield" onclick="viewGoodsDetail(${agvo.gseq})">${agvo.indate}</div>
 										<div class="listfield" onclick="viewGoodsDetail(${agvo.gseq})">${agvo.category}</div>
 										<c:choose>
@@ -196,6 +196,6 @@
 		</div>
 	</form>
 	</div>
-<script type="text/javascript" src="<c:url value='/resources/js/admin/goodsView.js'/>"></script>
+<script type="text/javascript" src="/script/admin/goodsView.js"></script>
 </body>
 </html>

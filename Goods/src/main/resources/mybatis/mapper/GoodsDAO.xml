@@ -34,4 +34,15 @@
         select * from goods where gseq = #{gseq}
     </select>
 
+    <select id="getAllGoods">
+        select * from goods_view g1 inner join (select gseq, min(giseq) as min_giseq from goods_view group by gseq) g2
+            on g1.gseq = g2.gseq and g1.giseq = g2.min_giseq
+            where gname like concat('%', #{gname}, '%')
+            order by g1.gseq limit #{paging.displayRow} offset #{paging.startNum}
+    </select>
+
+    <select id="getAllCategories" resultType="com.goods.g1.dto.GoodsVO">
+        select * from category
+    </select>
+
 </mapper>
