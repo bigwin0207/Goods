@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="resources/css/member.css">
+<link rel="stylesheet" href="../css/member.css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
 		<input type="button" value="인증하기"  id="m_confirm" onClick="m_confirm(${verificationCode})">
 		<div id="timer" style="margin-left: 10px; font-weight: bold"></div>		
 </div>
-<script src="<c:url value='/resources/js/member/newID.js'/>"></script>
+<script src="script/member/newID.js"></script>
 <script>
 
 function startTimer(count, display){
@@ -49,6 +49,6 @@ function startTimer(count, display){
 	};
 
 </script>
-<script src="<c:url value='/resources/js/member/newID.js'/>"></script>
+<script src="script/member/newID.js"></script>
 </body>
 </html>

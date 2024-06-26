@@ -1,24 +1,25 @@
 package com.goods.g1.dto;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
 import java.sql.Timestamp;
 
 @Data
-@Builder
-@AllArgsConstructor
 public class MemberVO {
+    @NotEmpty(message = "아이디 입력하세요!")
     private String userid;
+    @NotEmpty(message = "비밀번호 입력하세요!")
     private String pwd;
+    private float sale;
+    @NotEmpty(message = "이름 입력하세요!")
+    private String name;
+    @NotEmpty(message = "이메일 입력하세요!")
+    private String email;
+    @NotEmpty(message = "전화번호 입력하세요!")
+    private String phone;
     private int gseq;
     private String grade;
-    private float sale;
-    private String name;
-    private String email;
-    private String phone;
     private String zip_num;
     private String address1;
     private String address2;
@@ -30,4 +31,3 @@ public class MemberVO {
 
     public MemberVO() {}
 }
-

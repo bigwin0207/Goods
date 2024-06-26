@@ -67,8 +67,13 @@
 }
 
 textarea {
+<<<<<<< HEAD
 	background-color: white;
 	resize: none;
+=======
+    background-color: white;
+    resize: none;
+>>>>>>> origin/member
 }
 
 .pre-styled {

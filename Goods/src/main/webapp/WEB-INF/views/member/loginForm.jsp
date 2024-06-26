@@ -4,7 +4,7 @@
 <div>
 <section id="loginForm">
 		<article id="login">
-			<form method="post" action="login.do" name="loginForm">
+			<form method="post" action="login" name="loginForm">
 			<h2>LOGIN</h2>
 			<div class="loginbox">
 				<div class="logininput">

@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 .d-flex col{
+<<<<<<< HEAD
 	align-content:center;
 	justify-content: center;
 }
@@ -9,6 +10,16 @@ ul {
 	list-style-type: none;
 	margin-bottom: 0;
 	padding-left: 0;
+=======
+    align-content:center;
+    justify-content: center;
+}
+
+ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    padding-left: 0;
+>>>>>>> origin/member
 }
 
 .li-header, .li-item {
@@ -19,11 +30,19 @@ ul {
 }
 
 .li-header {
+<<<<<<< HEAD
 	background-color: #f0f0f0;
 }
 
 .li-header div {
 	font-weight: bold;
+=======
+    background-color: #f0f0f0;
+}
+
+.li-header div {
+    font-weight: bold;
+>>>>>>> origin/member
 }
 
 .li-item {
@@ -50,6 +69,7 @@ ul {
 }
 
 #badge {
+<<<<<<< HEAD
 	width: 30px;
 	height: auto;
 }
@@ -63,6 +83,21 @@ ul {
 	left: 0;
 	text-decoration: none;
 	color: black;
+=======
+    width: 30px;
+    height: auto;
+}
+
+.link {
+    display: block;
+    height: 100%;
+    width:100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    color: black;
+>>>>>>> origin/member
 }
 
 #switchBtn {
@@ -86,12 +121,20 @@ ul {
 }
 
 #switchBtn:hover{
+<<<<<<< HEAD
 	background-color: #939393;
+=======
+    background-color: #939393;
+>>>>>>> origin/member
 }
 
 #discardBtn {
     background-color: #c74747;
+<<<<<<< HEAD
 	color: #fff;
+=======
+    color: #fff;
+>>>>>>> origin/member
     width: 120px;
     height: 40px;
     text-align: center;
@@ -110,6 +153,7 @@ ul {
 }
 
 #discardBtn:hover{
+<<<<<<< HEAD
 	background-color: #d58181;
 }
 
@@ -132,4 +176,28 @@ ul {
   color: white;
   background-color: #6c757d; 
   border-color: #ccc;
+=======
+    background-color: #d58181;
+}
+
+.page-link {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: white;
+    font-weight:bold;
+    background-color: #3a3a3a;
+    border-color: #6c757d;
+
+}
+
+.page-link:focus, .page-link:hover {
+    color: white;
+    background-color: #6c757d;
+    border-color: #ccc;
+>>>>>>> origin/member
 }

@@ -1,8 +1,13 @@
 @charset "UTF-8";
 
 .list-group {
+<<<<<<< HEAD
 	list-style-type: none;
 	border-radius: 5px;
+=======
+    list-style-type: none;
+    border-radius: 5px;
+>>>>>>> origin/member
 }
 
 .list-item {
@@ -16,7 +21,11 @@
 }
 
 .item-header>div:not(:last-child) {
+<<<<<<< HEAD
 	border-right: 1px solid #ddd;
+=======
+    border-right: 1px solid #ddd;
+>>>>>>> origin/member
 }
 
 .item-header div {
@@ -55,8 +64,13 @@
 }
 
 .item-author > img {
+<<<<<<< HEAD
 	width: 25px;
 	height: 25px;
+=======
+    width: 25px;
+    height: 25px;
+>>>>>>> origin/member
 }
 
 .pre-styled {
@@ -65,6 +79,7 @@
 }
 
 textarea {
+<<<<<<< HEAD
 	resize: none;
 }
 
@@ -87,4 +102,28 @@ textarea {
   color: white;
   background-color: #6c757d; 
   border-color: #ccc;
+=======
+    resize: none;
+}
+
+.page-link {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: white;
+    font-weight:bold;
+    background-color: #3a3a3a;
+    border-color: #6c757d;
+
+}
+
+.page-link:focus, .page-link:hover {
+    color: white;
+    background-color: #6c757d;
+    border-color: #ccc;
+>>>>>>> origin/member
 }
