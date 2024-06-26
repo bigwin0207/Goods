@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
-<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.min.css'/>">
-<link rel="stylesheet" href="<c:url value='/resources/css/admin.css'/>">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/admin.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 	<body class="sb-nav-fixed">
@@ -23,7 +23,7 @@
 			            <div class="card-body">
 			              	<h5 class="card-title">Login Form</h5>
 			              	
-			              	<form method="post" action="<c:url value='/adminLogin.do'/>">
+			              	<form method="post" action="/adminLogin">
 			                	<div class="row mb-3">
 			                  		<label for="inputEmail3" class="col-sm-2 col-form-label">Admin ID</label>
 			                  		<div class="col-sm-10">

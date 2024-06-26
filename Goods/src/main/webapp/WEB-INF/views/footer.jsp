@@ -56,7 +56,7 @@
 
 				</div>
 				<div class="footer_adminbox">
-					<a href="adminLoginForm.do">
+					<a href="adminLoginForm">
 						<img src="/image/adminlogo.png">
 					</a>
 				</div>

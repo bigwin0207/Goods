@@ -6,9 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Goods Shop</title>
-<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.min.css'/>">
-<link rel="stylesheet" href="<c:url value='/resources/css/admin.css'/>">
-<link rel="stylesheet" href="<c:url value='/resources/css/admin/index.css'/>">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/admin.css">
+<link rel="stylesheet" href="/css/admin/index.css">
 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -59,7 +59,8 @@
 		               					<div>Email</div>
 		               					<div class="small-col">Zip_Code</div>
 		               					<div>Address</div>
-		               					<div>Detail Address</div>
+		               					<div>Address2</div>
+		               					<div>Detailed Address</div>
 		               					<div>Indate</div>
 		               					<div class="small-col">Y/N</div>
 		               					<div class="small-col"><input class="form-check-input" type="checkbox" id="checkAll"></div>
@@ -77,9 +78,10 @@
 			               					<div>${vo.name}</div>
 			               					<div>${vo.phone}</div>
 			               					<div>${vo.email}</div>
-			               					<div class="small-col">${vo.zip_code}</div>
-											<div>${vo.address}</div>
-											<div>${vo.d_address}</div>
+			               					<div class="small-col">${vo.zip_num}</div>
+											<div>${vo.address1}</div>
+											<div>${vo.address2}</div>
+											<div>${vo.address3}</div>
 											<div><fmt:formatDate value="${vo.indate}" type="both" pattern="yyyy-MM-dd" /></div>
 			               					<div class="small-col">
 			               						<c:choose>
@@ -108,7 +110,7 @@
 				</div>
 			</div>
         </div>
-        <script type="text/javascript" src="<c:url value='/resources/js/admin/member.js'/>"></script>
-        <script type="text/javascript" src="<c:url value='/resources/js/admin/fix.js'/>"></script>
+        <script type="text/javascript" src="/script/admin/member.js"></script>
+        <script type="text/javascript" src="/script/admin/fix.js"></script>
     </body>
 </html>

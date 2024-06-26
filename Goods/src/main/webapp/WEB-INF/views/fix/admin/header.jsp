@@ -10,10 +10,10 @@
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             	<c:choose>
             		<c:when test="${empty loginAdmin}">
-            			<li><a class="dropdown-item" href="adminLoginForm.do">로그인</a></li>
+            			<li><a class="dropdown-item" href="adminLoginForm">로그인</a></li>
             		</c:when>
             		<c:otherwise>
-                		<li><a class="dropdown-item" href="adminLogout.do">로그아웃</a></li>
+                		<li><a class="dropdown-item" href="adminLogout">로그아웃</a></li>
             		</c:otherwise>
             	</c:choose>
             </ul>

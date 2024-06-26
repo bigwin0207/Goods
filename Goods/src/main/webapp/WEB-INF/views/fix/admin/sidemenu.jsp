@@ -5,7 +5,7 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">회원관리</div>
-                <a class="nav-link" href="<c:url value='/adminIndex.do'/>">
+                <a class="nav-link" href="adminIndex">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
                     회원목록
                 </a>
@@ -17,11 +17,11 @@
                 </a>
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="adminInsertGoodsForm.do">상품 등록</a>
-                        <a class="nav-link" href="adminGoodsView.do?page=1">상품 목록</a>
+                        <a class="nav-link" href="adminInsertGoodsForm">상품 등록</a>
+                        <a class="nav-link" href="adminGoodsView?page=1">상품 목록</a>
                     </nav>
                 </div>
-                <a class="nav-link" href="<c:url value='/adminOrderView.do?page=1'/>">
+                <a class="nav-link" href="adminOrderView?page=1">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-sack-dollar"></i></div>
                     주문관리
                 </a>
@@ -39,11 +39,11 @@
                         </a>
                         <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="<c:url value='/adminQnaList.do'/>">Q&A</a>
-                                <a class="nav-link" href="<c:url value='/adminReviewList.do'/>">리뷰</a>
+                                <a class="nav-link" href="adminQnaList">Q&A</a>
+                                <a class="nav-link" href="adminReviewList">리뷰</a>
                             </nav>
                         </div>
-	                    <a class="nav-link" href="<c:url value='/adminNoticeList.do'/>">공지사항</a>
+	                    <a class="nav-link" href="adminNoticeList">공지사항</a>
                     </nav>
                 </div>
             </div>
@@ -54,4 +54,4 @@
         </div>
     </nav>
 </div>
-<script type="text/javascript" src="<c:url value='/resources/js/admin/sidemenu.js'/>"></script>
+<script type="text/javascript" src="/script/admin/sidemenu.js"></script>
