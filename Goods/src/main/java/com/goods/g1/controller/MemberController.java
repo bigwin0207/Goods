@@ -4,6 +4,7 @@ import com.goods.g1.dto.MemberVO;
 import com.goods.g1.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -76,12 +77,12 @@ public class MemberController {
 
 
     @PostMapping("/join")
-    public String join(@ModelAttribute("dto") MemberVO membervo,
+    public String join(@ModelAttribute("dto") @Valid MemberVO membervo,
                        BindingResult result, Model model,
                        @RequestParam(value = "reid", required = false) String reid,
                        @RequestParam(value = "pwdCheck", required = false) String pwdCheck) {
 
-        String url = "member/joinPage";
+        String url = "member/JoinPage";
         model.addAttribute("reid", reid);
         if (result.getFieldError("userid") != null)
             model.addAttribute("message", result.getFieldError("userid").getDefaultMessage());
@@ -98,7 +99,7 @@ public class MemberController {
         else if (pwdCheck == null || (!pwdCheck.equals(membervo.getPwd())))
             model.addAttribute("message", "비밀번호 일치시키세요!!");
         else {
-            url = "member/login";
+            url = "member/loginForm";
             model.addAttribute("message", "회원가입 성공, 로그인하세요~");
             ms.insertMember(membervo);
         }

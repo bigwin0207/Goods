@@ -11,8 +11,15 @@
 					<h2 >JOIN US</h2>
 					<h3>기본 정보</h3>
 					<div class="field">
+<%--
+						<div class="label">message</div>
+--%>
+						<div>${message}</div>
+
+					</div>
+					<div class="field">
 						<div class="label">아이디</div>
-						<input type="text" name="userid" id="userid">
+						<input type="text" name="userid" id="userid" value="${dto.userid}">
 						<input type="hidden" name="reid" id="reid">
 						<input type="button" value="중복 확인" onClick="checkid()">
 					</div>
@@ -26,17 +33,15 @@
 					</div>
 					<div class="field">
 						<div class="label">성명</div>
-						<input type="text" name="name"	placeholder="ex) 홍길동">
+						<input type="text" name="name"	placeholder="ex) 홍길동" value="${dto.name}">
 					</div>
 					<div class="field">
 						<div class="label">연락처</div>
-						<input type="text" name="phone" placeholder="010-1234-5678">
+						<input type="text" name="phone" placeholder="010-1234-5678" value="${dto.phone}">
 					</div>
 					<div class="field">
 						<div class="label">이메일</div>
-						<input type="text" name="email"	id="email" placeholder="abc@gmail.com">
-						<input type="hidden" name="reemail" id="reemail">
-						<input	type="button" value="인증번호 전송" onClick="verify()">
+						<input type="text" name="email"	id="email" placeholder="abc@gmail.com" value="${dto.email}">
 					</div>
 
 
