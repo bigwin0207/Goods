@@ -10,7 +10,7 @@ import java.io.FileInputStream;
 import java.io.OutputStream;
 
 @Controller
-public class ImageController {
+public class UtilController {
     @GetMapping("imageWrite")
     public void imageWrite(HttpServletRequest request, HttpServletResponse response) {
         String folder = request.getParameter("folder");
