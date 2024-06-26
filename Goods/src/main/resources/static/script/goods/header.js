@@ -4,7 +4,7 @@ function go_category (){
 		let goCate = document.querySelector("#categories_"+i)
 		if(goCate != null){
 			goCate.addEventListener("click", function(){
-				location.href="viewCategory.do?cgseq="+i+"?page=1";	
+				location.href="viewCategory?cgseq="+i+"?page=1";
 			})
 		}
 	}	
@@ -22,7 +22,7 @@ function productSearch(){
 			if(key == ''){
 				
 			} else {
-				location.href="searchGoods.do?key="+key;
+				location.href="searchGoods?key="+key;
 			}
 			
 		})

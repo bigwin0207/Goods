@@ -40,13 +40,7 @@ public class CartController {
 
 
         HttpSession session = request.getSession();
-        //MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-
-        //임시!!
-        MemberVO loginUser = new MemberVO();
-        loginUser.setUserid("hong1"); loginUser.setPwd("1234"); loginUser.setGseq(1); loginUser.setName("홍길동");
-        session.setAttribute("loginUser", loginUser);
-
+        MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 
         List<CartVO> cartlist = (List<CartVO>)session.getAttribute("cartlist");
 

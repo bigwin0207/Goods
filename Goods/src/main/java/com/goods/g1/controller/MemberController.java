@@ -72,6 +72,7 @@ public class MemberController {
     @GetMapping("/joinPage")
     public String joinPage() {
         return "member/JoinPage";
+    }
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.removeAttribute("loginUser");
@@ -101,7 +102,28 @@ public class MemberController {
         model.addAttribute("reid", reid);
         if (result.getFieldError("userid") != null)
             model.addAttribute("message", result.getFieldError("userid").getDefaultMessage());
-        else if (result.getFieldError("pwd") != null)
+        else if(result.getFieldError("pwd") != null){
+            model.addAttribute("message", result.getFieldError("pwd").getDefaultMessage());
+        }else if(result.getFieldError("name") != null){
+            model.addAttribute("message", result.getFieldError("name").getDefaultMessage());
+        }else if(result.getFieldError("phone") != null){
+            model.addAttribute("message", result.getFieldError("phone").getDefaultMessage());
+        }else if(result.getFieldError("email") != null) {
+            model.addAttribute("message", result.getFieldError("email").getDefaultMessage());
+        } else if (reid == null || (!reid.equals(membervo.getUserid())))
+                model.addAttribute("message", "아이디 중복체크하세요!!");
+        else if (pwdCheck == null || (!pwdCheck.equals(membervo.getPwd())))
+                model.addAttribute("message", "비밀번호 일치시키세요!!");
+        else {
+            url = "member/loginForm";
+            model.addAttribute("message", "회원가입 성공, 로그인하세요~");
+            ms.insertMember(membervo);
+        }
+
+        return url;
+    }
+
+
     @PostMapping("/updateMember")
     public String updateMember(@ModelAttribute("dto") @Valid MemberVO membervo,
                                BindingResult result,
@@ -115,23 +137,15 @@ public class MemberController {
             model.addAttribute("message", result.getFieldError("name").getDefaultMessage());
         }else if(result.getFieldError("phone") != null){
             model.addAttribute("message", result.getFieldError("phone").getDefaultMessage());
-        }else if(result.getFieldError("email") != null){
+        }else if(result.getFieldError("email") != null) {
             model.addAttribute("message", result.getFieldError("email").getDefaultMessage());
-        else if (reid == null || (!reid.equals(membervo.getUserid())))
-            model.addAttribute("message", "아이디 중복체크하세요!!");
-        else if (pwdCheck == null || (!pwdCheck.equals(membervo.getPwd())))
+        }else if (pwdCheck == null || (!pwdCheck.equals(membervo.getPwd())))
             model.addAttribute("message", "비밀번호 일치시키세요!!");
         else {
-            url = "member/loginForm";
-            model.addAttribute("message", "회원가입 성공, 로그인하세요~");
-            ms.insertMember(membervo);
-        }else if(pwdCheck == null || !membervo.getPwd().equals(pwdCheck)){
-            model.addAttribute("message","비밀번호 확인이 일치하지 않습니다.");
-        }else{
             ms.updateMember(membervo);
             HttpSession session = request.getSession();
             session.setAttribute("loginUser", membervo);
-            url = "redirect:/updatemember";
+            url = "redirect:/";
         }
         return url;
     }
@@ -333,6 +347,20 @@ public class MemberController {
         session.setAttribute("loginUser", mvo);
         return "redirect:/";
 
+    }
+
+    @GetMapping("/IDCheck")
+    public ModelAndView IDCheck(@RequestParam("userid") String userid){
+        ModelAndView mav = new ModelAndView();
+        MemberVO mvo = ms.getMember(userid);
+
+        if (mvo == null) {
+            mav.addObject("result", -1);
+        }else
+            mav.addObject("result", 1);
+        mav.addObject("userid", userid);
+        mav.setViewName("member/IDCheckPage");
+        return mav;
     }
 
 }

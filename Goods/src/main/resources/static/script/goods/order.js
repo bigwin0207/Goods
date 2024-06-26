@@ -27,7 +27,7 @@ function goOrder (){
 					document.orderpageform.numberOfGoods.value = totalQuantity;
 					document.orderpageform.orderTotalPrice.value = totalPrice;
 					
-					document.orderpageform.action = "getPayment.do";
+					document.orderpageform.action = "getPayment";
 					document.orderpageform.method = "post";
 					document.orderpageform.submit();
 				} else {

@@ -4,7 +4,7 @@ function login() {
 	if (login != null) {
 
 		login.addEventListener("click", function() {
-			location.href = "login.do";
+			location.href = "login";
 		})
 	}
 }
@@ -17,7 +17,7 @@ function gocart() {
 	if (gocart != null) {
 
 		gocart.addEventListener("click", function() {
-			location.href = "viewCartlist.do";
+			location.href = "viewCartlist";
 		});
 	}
 }
@@ -29,7 +29,7 @@ function gowishlist(){
 	
 	if (gowish != null) {
 		gowish.addEventListener("click", ()=>{
-			location.href = "viewWishlist.do";
+			location.href = "viewWishlist";
 		})
 	}
 }

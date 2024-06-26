@@ -5,13 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="resources/css/member.css">
+<link rel="stylesheet" href="/css/member.css">
 <title>ID Check</title>
 </head>
 <body>
 <div id="popup">
 	<h2> ID 중복 확인</h2>
-	<form method="post" name="IDCheckPage" action="IDCheck.do">
+	<form method="post" name="IDCheckPage" action="IDCheck">
 			User ID &nbsp; <input type="text" name="userid" value="${userid}">
 			<input type="submit" id="search" value="검색"><br><br><br>
 	</form>
@@ -29,6 +29,6 @@
 			</c:if>
 	</div>
 </div>
-<script src="<c:url value='/resources/member/newID.js'/>"></script>
+<script src="script/member/newID.js"></script>
 </body>
 </html>
