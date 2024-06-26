@@ -2,12 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>      
-<%@ include file="/WEB-INF/jsp/header.jsp"%>
+<%@ include file="../header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="<c:url value='/resources/css/listView.css'/>">
+<link rel="stylesheet" href="/css/listView.css">
 </head>
 <body>
 	<div class="view-container">
@@ -27,7 +27,7 @@
 				<div class="list-row">
 					<div class="titlefield"> ${orderDetailList[0].oseq}</div>
 					<div class="titlefield"> ${orderDetailList[0].name}</div>
-					<div class="titlefield"> ${orderDetailList[0].address} ${orderDetailList[0].daddress}</div>
+					<div class="titlefield"> ${orderDetailList[0].address1} ${orderDetailList[0].address2} ${orderDetailList[0].address3} </div>
 					<div class="titlefield"> ${orderDetailList[0].indate}</div>
 					<div class="titlefield"> ${orderDetailList[0].status}</div> 
 				</div>
@@ -55,5 +55,6 @@
 		</div>
 	</div>
 
+	<%@ include file="../footer.jsp"%>
 </body>
 </html>

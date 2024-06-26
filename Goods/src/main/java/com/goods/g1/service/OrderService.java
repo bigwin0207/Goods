@@ -6,11 +6,15 @@ import com.goods.g1.dto.CartVO;
 import com.goods.g1.dto.GoodsVO;
 import com.goods.g1.dto.MemberVO;
 import com.goods.g1.dto.OrderVO;
+import com.goods.g1.util.MPaging;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
 
@@ -39,9 +43,10 @@ public class OrderService {
             OrderVO ovo = new OrderVO();
             ovo.setUserid(mvo.getUserid());
             ovo.setName(mvo.getName());
-            ovo.setZip_code(mvo.getZip_code());
-            ovo.setAddress(mvo.getAddress());
-            ovo.setD_address(mvo.getD_address());
+            ovo.setZip_num(mvo.getZip_num());
+            ovo.setAddress1(mvo.getAddress1());
+            ovo.setAddress2(mvo.getAddress2());
+            ovo.setAddress3(mvo.getAddress3());
             ovo.setPhone(mvo.getPhone());
             ovo.setGseq(gseqInt);
             ovo.setGname(gvo.getGname());
@@ -74,9 +79,10 @@ public class OrderService {
         OrderVO ovo = new OrderVO();
         ovo.setUserid(mvo.getUserid());
         ovo.setName(mvo.getName());
-        ovo.setZip_code(mvo.getZip_code());
-        ovo.setAddress(mvo.getAddress());
-        ovo.setD_address(mvo.getD_address());
+        ovo.setZip_num(mvo.getZip_num());
+        ovo.setAddress1(mvo.getAddress1());
+        ovo.setAddress2(mvo.getAddress2());
+        ovo.setAddress3(mvo.getAddress3());
         ovo.setPhone(mvo.getPhone());
         ovo.setGseq(gseq);
         ovo.setGname(gvo.getGname());
@@ -115,5 +121,38 @@ public class OrderService {
                 cartlist.remove(deleteTo);
             }
         }
+    }
+
+    public HashMap<String, Object> viewOrderList(MemberVO mvo, HttpServletRequest request) {
+        HashMap<String, Object> result = new HashMap<>();
+
+        HttpSession session = request.getSession();
+        int page = 1;
+
+        if (request.getParameter("page") != null) {
+            page = Integer.parseInt(request.getParameter("page"));
+            session.setAttribute("page", page);
+        } else if (session.getAttribute("page") != null) {
+            page = (Integer) session.getAttribute("page");
+        } else {
+            session.removeAttribute("page");
+        }
+
+        MPaging paging = new MPaging();
+        paging.setPage(page);
+        paging.setStartNum(paging.getStartNum()-1);
+
+        int count = odao.getAllCount(mvo.getUserid(), "userid");
+        paging.setTotalCount(count);
+
+        List<OrderVO> orderList = odao.selectOrderList(mvo.getUserid(), paging);
+        result.put("orderList", orderList);
+        result.put("paging", paging);
+
+        return result;
+    }
+
+    public List<OrderVO> selectOrderDetail(int oseq) {
+        return odao.selectOrderDetail(oseq);
     }
 }
