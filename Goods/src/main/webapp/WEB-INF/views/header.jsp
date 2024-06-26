@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="/css/header_footer2.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="member/loginForm.css">
+<link rel="stylesheet" href="member/findId_PwdForm.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
@@ -28,7 +30,7 @@
 							<c:otherwise>
 								<a href="#">${loginUser.name}(${loginUser.userid})</a>
 								<a href="logout">로그아웃</a>
-								<a href="updateMemberForm">정보수정</a>
+								<a href="updateMemberForm"/>정보수정</a>
 								<a href="viewCartlist">장바구니</a>
 								<a href="viewWishlist">찜목록</a>
 								<a href="viewOrderList">주문목록</a>
@@ -44,9 +46,7 @@
 				</div>
 			</div>
 			<div id="logo">
-				<a href="main">
-					<img src="image/logo_.png">
-				</a>
+				<img src="../images/logo_.png"  onclick="location.href='/'">
 			</div>
 			<div class="menu_bar">
 				<div id="categories_0">BEST50</div>
@@ -65,5 +65,5 @@
 			</div>
 		</div>
 	</header>
-<script src="/script/goods/header.js"></script>
+<script src="script/goods/header.js"></script>
 </body>

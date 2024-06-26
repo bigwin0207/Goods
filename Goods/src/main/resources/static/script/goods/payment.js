@@ -3,7 +3,7 @@ function payment(){
 	
 	if(pay != null){
 		pay.addEventListener("click", function(){
-			document.paymentform.action = "orderInsert";
+			document.paymentform.action = "goOrder.do";
 			document.paymentform.method = "post";
 			document.paymentform.submit();
 		})

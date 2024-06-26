@@ -2,6 +2,9 @@
 
 a{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> member3
 	text-decoration: none;
 }
 
@@ -32,6 +35,7 @@ a{
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+<<<<<<< HEAD
 =======
     text-decoration: none;
 }
@@ -64,11 +68,16 @@ a{
     justify-content: center;
     align-items: center;
 >>>>>>> origin/member
+=======
+>>>>>>> member3
 }
 #search, #use{
     background-color: #3a3a3a;
     color: #fff;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> member3
 	width: 15%;
 	height: 33px;
 	line-height: 33px;
@@ -76,6 +85,7 @@ a{
 	border: none;
 	font-size: 90%;
 	margin-top: 3px;
+<<<<<<< HEAD
 =======
     width: 15%;
     height: 33px;
@@ -85,11 +95,16 @@ a{
     font-size: 90%;
     margin-top: 3px;
 >>>>>>> origin/member
+=======
+>>>>>>> member3
 }
 
 
 .field{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> member3
 	height: 45px;
 	line-height: 45px;
 	display: flex;
@@ -102,6 +117,7 @@ a{
 	margin-bottom: 10px;
 	border: 1px solid #ddd;
 	border-radius : 3px 3px 3px 3px;
+<<<<<<< HEAD
 =======
     height: 45px;
     line-height: 45px;
@@ -116,12 +132,17 @@ a{
     border: 1px solid #ddd;
     border-radius : 3px 3px 3px 3px;
 >>>>>>> origin/member
+=======
+>>>>>>> member3
 }
 
 .field input[type="button"] {
     background-color: #3a3a3a;
     color: #fff;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> member3
 	width: 100px;
 	height: 33px;
 	line-height: 33px;
@@ -162,6 +183,7 @@ a{
 	color: gray;
 	background-color:rgb(249, 249, 249);
 	text-align: left;
+<<<<<<< HEAD
 =======
     width: 100px;
     height: 33px;
@@ -204,12 +226,17 @@ a{
     background-color:rgb(249, 249, 249);
     text-align: left;
 >>>>>>> origin/member
+=======
+>>>>>>> member3
 }
 
 #m_confirm{
     background-color: #3a3a3a;
     color: #fff;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> member3
 	width: 15%;
 	height: 35px;
 	line-height: 33px;
@@ -232,6 +259,7 @@ a{
 	border: none;
 	cursor: pointer;
 	margin-bottom: 20px;
+<<<<<<< HEAD
 =======
     width: 15%;
     height: 35px;
@@ -256,4 +284,6 @@ a{
     cursor: pointer;
     margin-bottom: 20px;
 >>>>>>> origin/member
+=======
+>>>>>>> member3
 }

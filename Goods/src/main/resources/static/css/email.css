@@ -1,6 +1,9 @@
 @charset "UTF-8";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> member3
 #popup{ 
 	width:100%; 
 	height: 100%; 
@@ -10,6 +13,7 @@
 	  align-items: center;}
 form {
 	width:1000px;
+<<<<<<< HEAD
 =======
 #popup{
     width:100%;
@@ -21,6 +25,8 @@ form {
 form {
     width:1000px;
 >>>>>>> origin/member
+=======
+>>>>>>> member3
     display: flex;
     flex-direction: column;
     align-items: right;
@@ -35,6 +41,9 @@ form {
 
 input[type="submit"]{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> member3
 	justify-content: center; 
 	align-items: center; 
 	width: 90%; 
@@ -49,6 +58,7 @@ input[type="submit"]{
 form input[type="text"]{
 	width:50%;
 	height:30px;
+<<<<<<< HEAD
 =======
     justify-content: center;
     align-items: center;
@@ -65,4 +75,6 @@ form input[type="text"]{
     width:50%;
     height:30px;
 >>>>>>> origin/member
+=======
+>>>>>>> member3
 }

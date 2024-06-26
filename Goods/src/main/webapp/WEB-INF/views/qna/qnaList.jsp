@@ -2,14 +2,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ include file="/WEB-INF/jsp/header.jsp"%>
+<%@ include file="../header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Q&A 리스트</title>
-<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.min.css'/>">
-<link rel="stylesheet" href="<c:url value='/resources/css/qna/qna.css'/>">
+<link rel="stylesheet" href="../index/bootstrap.min.css">
+<link rel="stylesheet" href="../css/qna/qna.css">
 </head>
 <body>
 <div class="row d-flex justify-content-center mb-5">
@@ -67,7 +67,7 @@
                   		<div>
                   			<ul id="qna-list">
 							<c:forEach var="qna" items="${qnaList}">
-							<a class="link" href="<c:url value='/qnaView.do?qseq=${qna.qseq}'/>">
+							<a class="link" href="qnaView?qseq=${qna.qseq}">
 								<li class="qna-item">
 									<div class="d-flex justify-content-center align-items-center">
 										<div>${qna.qseq}</div>
@@ -160,7 +160,7 @@
                   		<div>
                   			<ul id="my-qna-list">
 								<c:forEach var="qna" items="${qnaMyList}">
-								<a class="link" href="<c:url value='/qnaView.do?qseq=${qna.qseq}'/>">
+								<a class="link" href="qnaView?qseq=${qna.qseq}">
 									<li class="qna-item">
 										<div class="d-flex justify-content-center align-items-center">
 											<div>${qna.qseq}</div>
@@ -193,58 +193,21 @@
 								</c:forEach>
 							</ul>
 						</div>
-						<span id="myPageInfo">${myPaging.currentPage} / ${myPaging.realEnd}</span>
-						<nav>
-							<ul class="pagination justify-content-center" id="myPagination">
-						  	<!-- 이전 버튼 -->
-						  	<c:choose>
-						  		<c:when test="${myPaging.prev}">
-						  			<li class="page-item">
-						  				<a class="page-link my-page-link" data-value="prev">Prev</a>
-						  			</li>
-						  		</c:when>
-						  		<c:otherwise>
-						  			<li class="page-item disabled">
-						  				<a class="page-link my-page-link">Prev</a>
-						  			</li>
-						  		</c:otherwise>
-						  	</c:choose>
-						  	<!-- 페이지 번호 -->
-						  	<c:forEach var="num" begin="${myPaging.startPage}" end="${myPaging.endPage}">
-						  		<c:if test="${num == myPaging.currentPage}">
-						  			<li class="page-item active"><a class="page-link my-page-link" data-value="${num}">${num}</a></li>
-						  		</c:if>
-						  		<c:if test="${num != myPaging.currentPage}">
-						  			<li class="page-item"><a class="page-link my-page-link" data-value="${num}">${num}</a></li>
-						  		</c:if>
-						  	</c:forEach>
-						    <!-- 다음 버튼 -->
-						    <c:choose>
-						  		<c:when test="${myPaging.next}">
-						  			<li class="page-item">
-						  				<a class="page-link my-page-link" data-value="next">Next</a>
-						  			</li>
-						  		</c:when>
-						  		<c:otherwise>
-						  			<li class="page-item disabled">
-						  				<a class="page-link my-page-link">Next</a>
-						  			</li>
-						  		</c:otherwise>
-						  	</c:choose>
-						  	</ul>
-						</nav>
+						<jsp:include page="../paging.jsp" >
+							<jsp:param value="NoiceList" name=""/>
+						</jsp:include>
                 	</div>
               	</div>
               	<div class="d-flex justify-content-end">
 	              	<c:if test="${not empty loginUser}">
-							<a class="btn btn-secondary" href="<c:url value='qnaWriteForm.do'/>">작성하기</a>
+							<a class="btn btn-secondary" href="qnaWriteForm">작성하기</a>
 					</c:if>
 				</div>
             </div>
     	</div>
 	</div>
 </div>
-<script type="text/javascript" src="<c:url value='/resources/js/qna/qna.js'/>"></script>
+<script type="text/javascript" src="script/qna/qna.js"></script>
 </body>
-<%@ include file="/WEB-INF/jsp/footer.jsp"%>
+<%@ include file="../footer.jsp"%>
 </html>

@@ -5,10 +5,14 @@
 #address{width: 30%; padding: 10px; background-color: gray; color:white; border: none; cursor: pointer; margin-bottom: 20px; }
 form {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	width:1000px;
 =======
     width:1000px;
 >>>>>>> origin/member
+=======
+	width:1000px;
+>>>>>>> member3
     display: flex;
     flex-direction: column;
     align-items: right;
@@ -23,10 +27,14 @@ form {
 
 form label {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	display: flex;
 =======
     display: flex;
 >>>>>>> origin/member
+=======
+	display: flex;
+>>>>>>> member3
     text-align: right;
     font-weight: bold;
     align-self: center;
@@ -35,6 +43,9 @@ form label {
 }
 .field input[type="text"]{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> member3
 	width:50%;
 	height:25px;
 	border: none; 
@@ -92,6 +103,7 @@ form label {
 	margin-bottom: 5px; 
 }
 	
+<<<<<<< HEAD
 =======
     width:50%;
     height:25px;
@@ -150,4 +162,6 @@ form label {
     margin-bottom: 5px; }
 
 >>>>>>> origin/member
+=======
+>>>>>>> member3
 

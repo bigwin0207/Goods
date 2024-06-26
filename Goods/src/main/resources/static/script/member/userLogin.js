@@ -1,11 +1,11 @@
 /*===========로그인================*/
-/* 로그인 창 입력 확인*/
+ /*로그인 창 입력 확인*/
 function loginCheck(){
-	if(document.loginForm.userid.value=="아이디"){
+	if(document.loginForm.userid.value==""){
 		alert("아이디를 입력하세요");
 		document.loginForm.userid.focus();
 		return false;
-	}else if(document.loginForm.pwd.value=="비밀번호"){
+	}else if(document.loginForm.pwd.value==""){
 		alert("비밀번호를 입력하세요");
 		document.loginForm.userid.focus();
 		return false;
@@ -15,7 +15,7 @@ function loginCheck(){
 }
 /* 아이디 찾기 창으로 이동*/
 function findIdForm(){
-	location.href="findIdForm.do"
+	location.href="findIdForm"
 }
 
 /* 아이디찾기 */

@@ -4,7 +4,7 @@ function gomain(){
 	
 	if(main != null){
 		main.addEventListener("click", ()=>{
-			location.href="main";
+			location.href="main.do";
 		})
 	}
 }
@@ -37,7 +37,7 @@ function deletecart(){
 			if(count == 0){
 				alert("삭제할 상품을 선택해주세요");			
 			} else {
-				document.cartlistform.action = "deleteCart";
+				document.cartlistform.action = "deleteCart.do";
 				document.cartlistform.method = "post";
 				document.cartlistform.submit();
 			}			
@@ -71,7 +71,7 @@ function goorder(){
 			if(count == 0){
 				alert("주문할 상품을 선택하세요");			
 			} else {
-				document.cartlistform.action = "orderFromCart";
+				document.cartlistform.action = "orderFromCart.do";
 				document.cartlistform.method = "post";
 				document.cartlistform.submit();
 			}				

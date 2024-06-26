@@ -8,8 +8,8 @@
 <head>
 <meta charset="UTF-8">
 
-<%--<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.min.css'/>">--%>
-<link rel="stylesheet" href="<c:url value='/resources/static/css/index/index.css'/>">
+<link rel="stylesheet" href="../index/bootstrap.min.css">
+<link rel="stylesheet" href="../index/index.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
@@ -142,7 +142,7 @@
 				<div class="card-header d-flex justify-content-between">
 					<div>Review</div>
 					<div>
-						<a href="reviewList"><i class="bi bi-plus-circle"></i> 전체보기</a>
+						<a href="reviewList.do"><i class="bi bi-plus-circle"></i> 전체보기</a>
 					</div>
 				</div>
 				<ul class="list-group list-group-flush">
@@ -178,7 +178,7 @@
 			</div>
 		</div>
 	</div>
-<%--<script type="text/javascript" src='<c:url value = "/resources/js/goods/main.js"/>'></script>--%>
+<script type="text/javascript" src="/script/goods/main.js"/></script>
 </body>
 <%@ include file="../footer.jsp"%>
 </html>

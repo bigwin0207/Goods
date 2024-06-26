@@ -1,9 +1,13 @@
 form {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	width:100%;
 =======
     width:100%;
 >>>>>>> origin/member
+=======
+	width:100%;
+>>>>>>> member3
     display: flex;
     flex-direction: column;
     border: 1px solid #ccc;
@@ -93,10 +97,14 @@ form {
 
 .btn input:hover{
 <<<<<<< HEAD
+<<<<<<< HEAD
     background-color: #252525;    
 =======
     background-color: #252525;
 >>>>>>> origin/member
+=======
+    background-color: #252525;    
+>>>>>>> member3
     color: #d1d1d1;
 }
 

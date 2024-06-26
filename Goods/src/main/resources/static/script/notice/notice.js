@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function getPageInfo() {   
-   fetch('/GoodsShop/pageInfo.do', {
+   fetch('/Goods/pageInfo', {
       method : 'POST',
       headers: {
          'Content-Type': 'application/json;charset=utf-8'
@@ -121,7 +121,7 @@ function asynGetContent() {
 	param.amount = paging.amount;
 	param.page = paging.currentPage;
 
-   fetch('/GoodsShop/getContent.do', {
+   fetch('/Goods/getContent', {
       method : 'POST',
       headers: {
          'Content-Type': 'application/json;charset=utf-8'
@@ -199,5 +199,5 @@ function asynGetContent() {
 }
 
 function insertNotice(){
-	location.href="noticeInsertForm.do";
+	location.href="noticeInsertForm";
 }

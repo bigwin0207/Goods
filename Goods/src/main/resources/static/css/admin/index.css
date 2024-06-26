@@ -2,6 +2,9 @@
 
 .d-flex col{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> member3
 	align-content:center;
 	justify-content: center;
 }
@@ -10,6 +13,7 @@ ul {
 	list-style-type: none;
 	margin-bottom: 0;
 	padding-left: 0;
+<<<<<<< HEAD
 =======
     align-content:center;
     justify-content: center;
@@ -20,6 +24,8 @@ ul {
     margin-bottom: 0;
     padding-left: 0;
 >>>>>>> origin/member
+=======
+>>>>>>> member3
 }
 
 .li-header, .li-item {
@@ -31,11 +37,15 @@ ul {
 
 .li-header {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> member3
 	background-color: #f0f0f0;
 }
 
 .li-header div {
 	font-weight: bold;
+<<<<<<< HEAD
 =======
     background-color: #f0f0f0;
 }
@@ -43,6 +53,8 @@ ul {
 .li-header div {
     font-weight: bold;
 >>>>>>> origin/member
+=======
+>>>>>>> member3
 }
 
 .li-item {
@@ -70,6 +82,9 @@ ul {
 
 #badge {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> member3
 	width: 30px;
 	height: auto;
 }
@@ -83,6 +98,7 @@ ul {
 	left: 0;
 	text-decoration: none;
 	color: black;
+<<<<<<< HEAD
 =======
     width: 30px;
     height: auto;
@@ -98,6 +114,8 @@ ul {
     text-decoration: none;
     color: black;
 >>>>>>> origin/member
+=======
+>>>>>>> member3
 }
 
 #switchBtn {
@@ -122,19 +140,27 @@ ul {
 
 #switchBtn:hover{
 <<<<<<< HEAD
+<<<<<<< HEAD
 	background-color: #939393;
 =======
     background-color: #939393;
 >>>>>>> origin/member
+=======
+	background-color: #939393;
+>>>>>>> member3
 }
 
 #discardBtn {
     background-color: #c74747;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	color: #fff;
 =======
     color: #fff;
 >>>>>>> origin/member
+=======
+	color: #fff;
+>>>>>>> member3
     width: 120px;
     height: 40px;
     text-align: center;
@@ -154,6 +180,9 @@ ul {
 
 #discardBtn:hover{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> member3
 	background-color: #d58181;
 }
 
@@ -176,6 +205,7 @@ ul {
   color: white;
   background-color: #6c757d; 
   border-color: #ccc;
+<<<<<<< HEAD
 =======
     background-color: #d58181;
 }
@@ -200,4 +230,6 @@ ul {
     background-color: #6c757d;
     border-color: #ccc;
 >>>>>>> origin/member
+=======
+>>>>>>> member3
 }

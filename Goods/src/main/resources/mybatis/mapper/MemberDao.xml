@@ -7,11 +7,17 @@
     <select id="getMember" resultType="com.goods.g1.dto.MemberVO">
         select * from member where userid=#{param1}
     </select>
-    
     <insert id="insertMember" parameterType="com.goods.g1.dto.MemberVO">
-        insert into member (userid, pwd, name, email, phone, zip_num,
-            address1, address2, address3, provider) values
-            (#{userid},#{pwd},#{name},#{email},#{phone},#{zip_num},
-             #{address1},#{address2},#{address3}, #{provider})
-        </insert>
+        insert into member (userid,pwd,name,email,phone,zip_num,address1,address2,address3,provider)
+        values (#{userid},#{pwd},#{name},#{email},#{phone},#{zip_num},#{address1},#{address2},#{address3},#{provider})
+    </insert>
+
+    <update id="updateMember" parameterType="com.goods.g1.dto.MemberVO">
+            update member set pwd=#{pwd}, name=#{name}, zip_num=#{zip_num}, address1=#{address1},
+                              address2=#{address2}, address3=#{address3}, email=#{email}, phone=#{phone} where userid=#{userid}
+    </update>
+
+    <select id="checkEmail" resultType="com.goods.g1.dto.MemberVO">
+        select * from member where name=#{name} and email=#{email}
+    </select>
 </mapper>

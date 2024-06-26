@@ -14,7 +14,17 @@ public class MemberService {
         MemberVO mvo = mdao.getMember(userid);
         return mvo;
     }
+
     public void insertMember(MemberVO mvo) {
         mdao.insertMember(mvo);
+    }
+
+    public void updateMember(MemberVO membervo) {
+        mdao.updateMember(membervo);
+    }
+
+    public MemberVO checkEmail(String name, String email) {
+        MemberVO mvo = mdao.checkEmail(name,email);
+        return mvo;
     }
 }
