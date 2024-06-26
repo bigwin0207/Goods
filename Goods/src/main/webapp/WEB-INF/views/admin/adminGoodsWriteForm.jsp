@@ -31,6 +31,7 @@
 				<c:choose>
 				<c:when test="${empty updateGoods}">
 				<!-- ----------------------- 상품 등록 페이지 ------------------------ -->
+				<div id="hiddenFields"></div>
 				<div class="admin-container-title">
 					상품 등록 페이지
 				</div>
@@ -41,9 +42,6 @@
 						<div class="labelfield">판매가</div>
 						<div class="labelfield">마진</div>
 						<div class="labelfield">상세설명</div>
-						<!-- <div class="labelfield">
-                            <input type="checkbox" id="checkAll">
-                        </div> -->
 						<div class="labelfield">카테고리</div>
 						<div class="labelfield">베스트YN</div>
 						<div class="labelfield">판매중YN</div>
@@ -57,13 +55,13 @@
 								<input type="text" name="gname">
 							</div>
 							<div class="inputfield">
-								<input id="prices" type="text" name="oprice">
+								<input id="prices" type="text" name="o_price">
 							</div>
 							<div class="inputfield">
-								<input id="prices" type="text" name="sprice">
+								<input id="prices" type="text" name="s_price">
 							</div>
 							<div class="inputfield">
-								<input id="prices" type="text" name="mprice">
+								<input id="prices" type="text" name="m_price">
 							</div>
 							<div class="inputfield">
 								<input type="text" name="content">
@@ -85,7 +83,7 @@
 								<input type="radio" name="useyn" value="0">&nbsp;미판매
 							</div>
 							<div class="inputfield">
-								<input type="text" id="inputFile" readonly="readonly" placeholder="파일 선택하기" style="cursor:pointer;">
+								<input type="text" id="fileInputButton" readonly="readonly" placeholder="파일 선택하기" style="cursor:pointer;">
 							</div>
 							<div class="imgfield">
 								<div class="img-use-container">
@@ -207,12 +205,10 @@
 </div>
 </div>
 </div>
-<div class="input-label">
-	<div class="labelfield">상품명</div>
-</div>
+
 <div class="inputfield">
 	<form name="fileUploadForm" id="fileUploadForm" method="post" enctype="multipart/form-data">
-		<input type="file" name="image" multiple="multiple" id="fileInput">
+		<input type="file" name="image" multiple="multiple" id="fileInputHidden" style="display: none">
 	</form>
 </div>
 <script type="text/javascript" src='script/admin/goodsWrite.js'></script>
