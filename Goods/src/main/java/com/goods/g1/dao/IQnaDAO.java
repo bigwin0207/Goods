@@ -8,4 +8,5 @@ import java.util.List;
 @Mapper
 public interface IQnaDAO {
     List<QnaVO> getAllQna();
+    QnaVO getQna(int qseq);
 }

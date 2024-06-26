@@ -193,46 +193,9 @@
 								</c:forEach>
 							</ul>
 						</div>
-						<span id="myPageInfo">${myPaging.currentPage} / ${myPaging.realEnd}</span>
-						<nav>
-							<ul class="pagination justify-content-center" id="myPagination">
-						  	<!-- 이전 버튼 -->
-						  	<c:choose>
-						  		<c:when test="${myPaging.prev}">
-						  			<li class="page-item">
-						  				<a class="page-link my-page-link" data-value="prev">Prev</a>
-						  			</li>
-						  		</c:when>
-						  		<c:otherwise>
-						  			<li class="page-item disabled">
-						  				<a class="page-link my-page-link">Prev</a>
-						  			</li>
-						  		</c:otherwise>
-						  	</c:choose>
-						  	<!-- 페이지 번호 -->
-						  	<c:forEach var="num" begin="${myPaging.startPage}" end="${myPaging.endPage}">
-						  		<c:if test="${num == myPaging.currentPage}">
-						  			<li class="page-item active"><a class="page-link my-page-link" data-value="${num}">${num}</a></li>
-						  		</c:if>
-						  		<c:if test="${num != myPaging.currentPage}">
-						  			<li class="page-item"><a class="page-link my-page-link" data-value="${num}">${num}</a></li>
-						  		</c:if>
-						  	</c:forEach>
-						    <!-- 다음 버튼 -->
-						    <c:choose>
-						  		<c:when test="${myPaging.next}">
-						  			<li class="page-item">
-						  				<a class="page-link my-page-link" data-value="next">Next</a>
-						  			</li>
-						  		</c:when>
-						  		<c:otherwise>
-						  			<li class="page-item disabled">
-						  				<a class="page-link my-page-link">Next</a>
-						  			</li>
-						  		</c:otherwise>
-						  	</c:choose>
-						  	</ul>
-						</nav>
+						<jsp:include page="../paging.jsp" >
+							<jsp:param value="NoiceList" name=""/>
+						</jsp:include>
                 	</div>
               	</div>
               	<div class="d-flex justify-content-end">

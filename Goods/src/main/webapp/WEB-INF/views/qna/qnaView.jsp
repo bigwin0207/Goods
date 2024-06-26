@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ include file="/WEB-INF/jsp/header.jsp"%>
+<%@ include file="../header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Q&A 상세보기</title>
-<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.min.css'/>">
-<link rel="stylesheet" href="<c:url value='/resources/css/qna/qnaView.css'/>">
+<link rel="stylesheet" href="../index/bootstrap.min.css">
+<link rel="stylesheet" href="../qna/qnaView.css">
 </head>
 <body>
 	<div class="card">
@@ -39,15 +39,15 @@
 	    </div>
 	    <div class="card-footer d-flex justify-content-end pb-3">
 	    	<c:if test="${vo.userid eq loginUser.userid && empty vo.reply}">
-				<a class="btn btn-light me-2" href="qnaWriteForm.do?qseq=${vo.qseq}">수정</a>
+				<a class="btn btn-light me-2" href="qnaWriteForm?qseq=${vo.qseq}">수정</a>
 			</c:if>
 			<c:if test="${vo.userid eq loginUser.userid}">
 				<button class="btn btn-secondary me-2" name="deleteBtn" id="deleteBtn">삭제</button>
 			</c:if>
-			<a class="btn btn-light" href="<c:url value='/qnaList.do'/>">목록</a>
+			<a class="btn btn-light" href="qnaList">목록</a>
 	    </div>
     </div>
-<script type="text/javascript" src="<c:url value='/resources/js/qna/qnaView.js'/>"></script>
+<script type="text/javascript" src="script/qna/qnaView.js'/>"></script>
 </body>
-<%@ include file="/WEB-INF/jsp/footer.jsp"%>
+<%@ include file="../footer.jsp"%>
 </html>

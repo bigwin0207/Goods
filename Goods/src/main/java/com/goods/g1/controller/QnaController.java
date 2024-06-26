@@ -25,4 +25,12 @@ public class QnaController {
         mav.setViewName("qna/qnaList");
         return mav;
     }
+
+    @GetMapping("/qnaView")
+    public ModelAndView qnaView(@RequestParam("qseq") int qseq) {
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("qnaVO", qs.getQna(qseq));
+        mav.setViewName("qna/qnaView");
+        return mav;
+    }
 }

@@ -7,4 +7,8 @@
     <select id="getAllQna" resultType="com.goods.g1.dto.QnaVO">
         select * from Qna
     </select>
+
+    <select id="getQna" resultType="com.goods.g1.dto.QnaVO">
+        select * from qna where qseq=#{param1}
+    </select>
 </mapper>

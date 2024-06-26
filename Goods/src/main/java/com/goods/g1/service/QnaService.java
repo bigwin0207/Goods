@@ -16,4 +16,8 @@ public class QnaService {
     public List<QnaVO> getAllQna() {
         return qdao.getAllQna();
     }
+
+    public QnaVO getQna(int qseq) {
+        return qdao.getQna(qseq);
+    }
 }

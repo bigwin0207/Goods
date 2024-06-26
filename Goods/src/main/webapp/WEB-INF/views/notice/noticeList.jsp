@@ -96,7 +96,7 @@
 			</div>
 		</div>
 	</div>
-<%--<script type="text/javascript" src="<c:url value='/resources/js/notice/notice.js'/>"></script>--%>
+<%--<script type="text/javascript" src="script/notice/notice.js"></script>--%>
 </body>
 <%@ include file="../footer.jsp"%>
 </html>
