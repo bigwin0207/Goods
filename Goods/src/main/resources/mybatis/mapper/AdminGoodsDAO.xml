@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.goods.g1.dao.IAdminDAO">
+    <select id="getAdmin">
+        select * from admin where adminid = #{adminID}
+    </select>
+
+    <select id="getTotalMember" resultType="_int">
+        select count(*) from member
+    </select>
+
+    <select id="getMemberList">
+        select * from member_view order by indate desc limit #{amount} offset #{offset}
+    </select>
+
+
+</mapper>
