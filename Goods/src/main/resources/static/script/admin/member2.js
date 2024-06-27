@@ -1,0 +1,7 @@
+function switchYN() {
+
+}
+
+function discard() {
+
+}

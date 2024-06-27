@@ -9,14 +9,15 @@
 <link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/admin.css">
 <link rel="stylesheet" href="/css/admin/index.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
-	<body class="sb-nav-fixed">
+	<form class="sb-nav-fixed" method="post" action="">
         <!-- header -->
         <jsp:include page="../fix/admin/header.jsp"/>
-        
+
         <div id="layoutSidenav">
         	<!-- side -->
         	<jsp:include page="../fix/admin/sidemenu.jsp"/>
@@ -34,7 +35,7 @@
 							  <option value="100">100</option>
 							</select>
 					    </div>
-					    
+
 					    <div class="col d-flex justify-content-end">
 					    	<select class="form-select w-25 me-1" name="search" id="search">
 						  		<option value="userid" selected>아이디</option>
@@ -46,7 +47,7 @@
 					    	</div>
 					    </div>
 					</div>
-					
+
 					<!-- memberList -->
 					<div class="mt-4">
 						<div>
@@ -104,14 +105,25 @@
 				    	</jsp:include>
 				    	<span class="ms-3" id="pageInfo">${paging.currentPage} / ${paging.realEnd}</span>
 				    	<div class="d-flex col justify-content-end">
-							<input type="button" name="switchBtn" id="switchBtn" value="회원 상태 변경"/>
-							<input type="button" name="discardBtn" id="discardBtn" value="탈퇴 처리하기"/>
+							<input type="button" name="switchBtn" id="switchBtn" value="회원 상태 변경" onclick="switchYN()"/>
+							<input type="button" name="discardBtn" id="discardBtn" value="탈퇴 처리하기" onclick="discard()"/>
 						</div>
 					</div>
 				</div>
 			</div>
         </div>
+	</form>
+	<script>
+		$(document).ready(function() {
+			// 체크박스 전체 선택 기능
+			$('#checkAll').click(function() {
+				$('input[name="check"]').prop('checked', this.checked);
+			});
+		});
+	</script>
+	
         <script type="text/javascript" src="/script/admin/member.js"></script>
+		<script type="text/javascript" src="/script/admin/member2.js"></script>
         <script type="text/javascript" src="/script/admin/fix.js"></script>
     </body>
 </html>

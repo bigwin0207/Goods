@@ -58,14 +58,18 @@ checkAll.addEventListener("change", function() {
 });
 
 function checkBoxChecked() {
+
 	let checkList = [];
-	checkBoxes = document.querySelectorAll("div.small-col input[type='checkbox'][name='check']");
-	
-	for (let i = 0; i < checkBoxes.length; i++) {
+	let checkBoxes = document.querySelectorAll("div.small-col input[type='checkbox'][name='check']:checked");
+/*	for (let i = 0; i < checkBoxes.length; i++) {
 		if (checkBoxes[i].checked == true) {
 			checkList.push(checkBoxes[i].value);
 		}
-	}
+	}*/
+
+	checkBoxes.forEach(function(checkbox){
+		checkList.push(checkbox.value);
+	});
 
 	return checkList;
 }
