@@ -65,7 +65,11 @@ public class UtilController {
             }
         }
 
-        for (MultipartFile file : files) {
+        String[] savefilenames = new String[files.length];
+        String[] images = new String[files.length];
+
+        for (int i=0; i<files.length; i++) {
+            MultipartFile file = files[i];
             if (file.isEmpty()) {
                 response.put("STATUS", 0);
                 response.put("ERROR", "No file selected");
@@ -74,14 +78,13 @@ public class UtilController {
 
             String oriname = file.getOriginalFilename();
             if (!oriname.equals("")) {
-                String realname = oriname + String.valueOf(System.currentTimeMillis());
-                String uploadPath = uploadDir + File.separator + realname;
+                String uploadPath = uploadDir + File.separator + oriname;
 
                 try {
                     file.transferTo(new File(uploadPath));
                     response.put("STATUS", 1);
-                    response.put("SAVEFILENAME", realname);
-                    response.put("image", oriname);
+                    savefilenames[i] = oriname;
+                    images[i] = oriname;
 
                 } catch (IOException e) {
                     response.put("STATUS", 0);
@@ -91,6 +94,9 @@ public class UtilController {
             }
 
         }
+
+        response.put("savefilenames", savefilenames);
+        response.put("images", images);
 
         return response;
 
