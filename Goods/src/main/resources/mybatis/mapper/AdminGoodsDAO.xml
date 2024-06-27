@@ -3,18 +3,26 @@
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.goods.g1.dao.IAdminDAO">
-    <select id="getAdmin">
-        select * from admin where adminid = #{adminID}
-    </select>
+<mapper namespace="com.goods.g1.dao.IAdminGoodsDAO">
+    <update id="updateGoods">
+        update goods set gname = #{gname}, cgseq = #{cgseq}, o_price = #{o_price}, s_price = #{s_price}, content = #{content}, bestyn = #{bestyn}, useyn = #{useyn} where gseq = #{gseq}
+    </update>
 
-    <select id="getTotalMember" resultType="_int">
-        select count(*) from member
-    </select>
+    <delete id="deleteGoodsImagesWithGiseqs">
+        delete from goodsimage
+        where gseq = #{gseq}
+        and giseq not in
+        <foreach item="giseq" index="idx" collection="giseqs" open="(" separator="," close=")">
+            #{giseq}
+        </foreach>
+    </delete>
+    
+    <delete id="deleteGoodsImagesWithoutGiseqs">
+        delete from goodsimage where gseq = #{gseq}
+    </delete>
 
-    <select id="getMemberList">
-        select * from member_view order by indate desc limit #{amount} offset #{offset}
-    </select>
-
+    <insert id="writeGoodsImages">
+        insert into goodsimage (gseq, oriname, realname, filesize) values (#{gseq}, #{oriname}, #{realname}, #{filesize})
+    </insert>
 
 </mapper>

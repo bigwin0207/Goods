@@ -251,26 +251,55 @@ input[type="button"]:hover {
 
 .img-use-container{
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
 }
 
 
 .update-imgbox{
-
+    position: relative;
+    display: inline-block;
+    margin: 10px;
 }
 
 .update-imgbox img{
     width: 150px;
 }
 
+.update-imgbox input[type="button"]{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    opacity: 50%;
+    padding: 0px 10px;
+    background: #b52222;
+}
 
-.imgfield{
-
+.update-imgbox input[type="button"]:hover{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    opacity: 100%;
+    padding: 0px 10px;
+    background: #b70e0e;
+    transition: opacity, background-color 0.3s;
 }
 
 
 
+.imgfield{
+    width: calc(100% - 20px);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: space-between;
+}
+
+
+imgfieldwrap{
+
+}
 
 
 

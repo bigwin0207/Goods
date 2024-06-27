@@ -27,11 +27,11 @@
 	<div id="layoutSidenav_content">
 		<form name="goodsWriteForm" method="post" enctype="multipart/form-data">
 			<div class="admin-goods-write-container">
+				<div id="hiddenFields"></div>
 
 				<c:choose>
 				<c:when test="${empty updateGoods}">
 				<!-- ----------------------- 상품 등록 페이지 ------------------------ -->
-				<div id="hiddenFields"></div>
 				<div class="admin-container-title">
 					상품 등록 페이지
 				</div>
@@ -108,6 +108,7 @@
 			<div class="admin-goods-inner-container">
 				<div class="input-label">
 					<div class="labelfield">상품명</div>
+					<input type="hidden" name="oldGname" value="${updateGoods.gname}">
 					<div class="labelfield">원가</div>
 					<div class="labelfield">판매가</div>
 					<div class="labelfield">마진</div>
@@ -115,8 +116,9 @@
 					<div class="labelfield">카테고리</div>
 					<div class="labelfield">베스트YN</div>
 					<div class="labelfield">판매중YN</div>
+					<div class="labelfield" style="height: 300px; justify-content: flex-start;
+    align-items: flex-start;">기존이미지</div>
 					<div class="labelfield">상품이미지</div>
-					<div class="labelfield">기존이미지</div>
 				</div>
 
 				<div class="input-container">
@@ -174,22 +176,31 @@
 								</c:otherwise>
 							</c:choose>
 						</div>
-						<div class="inputfield">
-							<input type="file" name="image" multiple="multiple">
-						</div>
+						<div class="imgfieldwrap">
 						<div class="imgfield">
 							<c:set var="imgcnt" value=""></c:set>
 							<c:forEach items="${updateGoods.imageList}" var="img" varStatus="imgIdx">
 								<div class="img-use-container">
-									<div class="update-imgbox">
-										<img src="/imageWrite?folder=${updateGoods.gseq}${updateGoods.gname}&realName=${img.realname}">
-									</div>
-									<div class="update-checkbox">
-										<input type="checkbox" name="giseq" value="${img.giseq}">
-										&nbsp; 사용하기
+									<div class="img-update-wrap">
+										<div class="update-imgbox" id="update-imgbox">
+											<img src="/imageWrite?folder=${updateGoods.gseq}${updateGoods.gname}&realName=${img.realname}">
+											<input id="img_useyn_btn" type="button" value="X" onclick="imgUseYn('${img.realname}')"/>
+											<input type="hidden" name="giseq" value="${img.giseq}">
+											<input type="hidden" name="oldimgs" value="${img.realname}">
+										</div>
 									</div>
 								</div>
 							</c:forEach>
+						</div>
+						</div>
+						<div class="inputfield">
+							<input type="text" id="fileInputButton" readonly="readonly" placeholder="파일 선택하기" style="cursor:pointer;">
+						</div>
+						<div class="imgfield">
+							<div class="img-use-container">
+								<div class="update-imgbox" id="prev-img">
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

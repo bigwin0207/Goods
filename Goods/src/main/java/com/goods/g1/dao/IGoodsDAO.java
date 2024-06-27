@@ -28,6 +28,6 @@ public interface IGoodsDAO {
 
     int lookupMaxGseq();
 
-    void writeGoodsImages(int gseq, String oriname, String realname, Long fileSize);
+
 
 }

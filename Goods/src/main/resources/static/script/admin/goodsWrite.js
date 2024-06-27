@@ -33,7 +33,7 @@ function go_update() {
 			} else if (form.cgseq.value == "0") {
 				alert("카테고리를 선택해주세요");
 			} else {
-				document.goodsWriteForm.action = "adminUpdateGoods.do";
+				document.goodsWriteForm.action = "adminGoodsUpdate";
 				document.goodsWriteForm.method = "post";
 				document.goodsWriteForm.submit();
 
@@ -86,6 +86,50 @@ function inputFile(){
 }
 
 inputFile();
+
+
+function imgUseYn(realname){
+	let img = document.querySelector(`#update-imgbox img[src*="${realname}"]`).parentElement;
+	if (img){
+		img.remove();
+	}
+}
+
+
+
+/*function imgUseYn(gseq, gname, realname){
+	let url = "/deleteFiles";
+
+	fetch('/deleteFiles', {
+		method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				gseq: gseq,
+				gname: gname,
+				realname: realname
+			})
+	})
+	.then(response => {
+		if (!response.ok) {
+			throw new Error('Network response was not ok');
+		}
+		return response.json();
+	})
+	.then(data => {
+		if (data.STATUS == 1) {{
+			let img = document.querySelector(`#update-imgbox img[src*="${realname}"]`).parentElement;
+			if (img){
+				img.remove();
+			}
+		}}
+	})
+	.catch(error => {
+		console.error('Error:', error);
+	});
+}*/
+
 
 
 $(document).ready(function () {

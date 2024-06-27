@@ -54,9 +54,7 @@
         select max(gseq) from goods
     </select>
 
-    <insert id="writeGoodsImages" parameterType="com.goods.g1.dto.GoodsImageVO">
-        insert into goodsimage (gseq, oriname, realname, filesize) values (#{param1}, #{param2}, #{param3}, #{param4})
-    </insert>
+
 
 
 

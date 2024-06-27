@@ -1,5 +1,5 @@
 function viewGoodsDetail(gseq) {
-	location.href = "goodsDetailView.do?gseq=" + gseq;
+	location.href = "goodsDetailView?gseq=" + gseq;
 }
 
 
