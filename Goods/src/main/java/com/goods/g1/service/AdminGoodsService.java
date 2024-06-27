@@ -90,7 +90,12 @@ public class AdminGoodsService {
                 if (tempfile.renameTo(newFile)){
                     long fileSize = newFile.length();
                     System.out.println("oriname : " + oriname + " realname : " + realname + " fileSize : " + fileSize);
-                    adao.writeGoodsImages(new GoodsImageVO(oriname, realname, fileSize, gseq));
+                    GoodsImageVO givo = new GoodsImageVO();
+                    givo.setGseq(gseq);
+                    givo.setOriname(oriname);
+                    givo.setRealname(realname);
+                    givo.setFilesize(fileSize);
+                    adao.writeGoodsImages(givo);
                 } else {
                     System.out.println("failed to move file... : " + tempfile.getPath());
                 }

@@ -34,12 +34,16 @@ public class FileManageService {
             for (File file : deleteTo){
                 String fileName = file.getName();
 
-                if (!isInArray(fileName, imgsToUse)){
-                    if(file.delete()){
-                        System.out.println("file deleted : " + fileName);
-                    } else {
-                        System.out.println("failed to delete file : " + fileName);
+                if(imgsToUse!=null && imgsToUse.length>0){
+                    if (!isInArray(fileName, imgsToUse)){
+                        if(file.delete()){
+                            System.out.println("file deleted : " + fileName);
+                        } else {
+                            System.out.println("failed to delete file : " + fileName);
+                        }
                     }
+                } else {
+                    file.delete();
                 }
             }
         }
@@ -133,6 +137,7 @@ public class FileManageService {
 
 
     public boolean isInArray(String value, String[] array) {
+
         for (String item : array) {
             if (item.equals(value)) {
                 return true;
