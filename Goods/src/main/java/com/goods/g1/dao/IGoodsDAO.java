@@ -19,4 +19,15 @@ public interface IGoodsDAO {
     List<GoodsImageVO> getImageList(@Param("gseq") int gseq);
 
     GoodsVO getGoods(@Param("gseq") int gseq);
+
+    List<GoodsVO> getAllGoods(@Param("gname") String gname, MPaging paging);
+
+    List<GoodsVO> getAllCategories();
+
+    void insertGoods(GoodsVO gvo);
+
+    int lookupMaxGseq();
+
+
+
 }

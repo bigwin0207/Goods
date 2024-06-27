@@ -91,11 +91,7 @@
 }
 
 .search-row{
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> member3
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -111,20 +107,6 @@
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
-<<<<<<< HEAD
-    margin: 2px 5px;	
-}
-
-.search-form{
-	width: 50%;
-    display: flex;
-    justify-content: flex-end;
-	
-}
-
-.search-button input[type="text"] {
-	width: 100%;
-=======
     margin: 2px 5px;
 }
 
@@ -137,7 +119,6 @@
 
 .search-button input[type="text"] {
     width: 100%;
->>>>>>> member3
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -146,20 +127,12 @@
 }
 
 .search-button input[type="button"]{
-<<<<<<< HEAD
-	width: 100%;
-=======
     width: 100%;
->>>>>>> member3
     padding: 8px;
     border: 1px solid #3a3a3a;
     border-radius: 5px;
     margin: 3px 5px;
-<<<<<<< HEAD
-    height: 45px;	
-=======
     height: 45px;
->>>>>>> member3
 }
 
 
@@ -218,11 +191,7 @@
 }
 
 /* 텍스트 인풋 스타일 */
-<<<<<<< HEAD
-.inputfield input[type="text"], 
-=======
 .inputfield input[type="text"],
->>>>>>> member3
 .inputfield input[type="file"] {
     width: calc(100% - 20px);
     padding: 8px;
@@ -238,6 +207,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 2px 5px;
+    outline: none;
 }
 
 /* radio 인풋 스타일 */
@@ -280,31 +250,56 @@ input[type="button"]:hover {
 }
 
 .img-use-container{
-<<<<<<< HEAD
-	display: flex;
-=======
     display: flex;
->>>>>>> member3
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
 }
 
 
 .update-imgbox{
-
+    position: relative;
+    display: inline-block;
+    margin: 10px;
 }
 
 .update-imgbox img{
     width: 150px;
 }
 
+.update-imgbox input[type="button"]{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    opacity: 50%;
+    padding: 0px 10px;
+    background: #b52222;
+}
 
-.imgfield{
-
+.update-imgbox input[type="button"]:hover{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    opacity: 100%;
+    padding: 0px 10px;
+    background: #b70e0e;
+    transition: opacity, background-color 0.3s;
 }
 
 
 
+.imgfield{
+    width: calc(100% - 20px);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: space-between;
+}
+
+
+imgfieldwrap{
+
+}
 
 
 

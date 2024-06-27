@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.goods.g1.dao.IAdminGoodsDAO">
+    <update id="updateGoods">
+        update goods set gname = #{gname}, cgseq = #{cgseq}, o_price = #{o_price}, s_price = #{s_price}, content = #{content}, bestyn = #{bestyn}, useyn = #{useyn} where gseq = #{gseq}
+    </update>
+
+    <delete id="deleteGoodsImagesWithGiseqs">
+        delete from goodsimage
+        where gseq = #{gseq}
+        and giseq not in
+        <foreach item="giseq" index="idx" collection="giseqs" open="(" separator="," close=")">
+            #{giseq}
+        </foreach>
+    </delete>
+    
+    <delete id="deleteGoodsImagesWithoutGiseqs">
+        delete from goodsimage where gseq = #{gseq}
+    </delete>
+
+    <insert id="writeGoodsImages">
+        insert into goodsimage (gseq, oriname, realname, filesize) values (#{gseq}, #{oriname}, #{realname}, #{filesize})
+    </insert>
+
+</mapper>

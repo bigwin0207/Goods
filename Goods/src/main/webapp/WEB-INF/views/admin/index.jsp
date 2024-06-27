@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/css/admin.css">
 <link rel="stylesheet" href="/css/admin/index.css">
 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 	<body class="sb-nav-fixed">

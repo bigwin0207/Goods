@@ -11,39 +11,17 @@
 #container a {
     text-decoration: none;
     margin: 35px auto;
-<<<<<<< HEAD
-<<<<<<< HEAD
-	color: #646464;
-=======
     color: #646464;
->>>>>>> origin/member
-=======
-	color: #646464;
->>>>>>> member3
 }
 
 /* 베스트 20, 신상품, 공지, 리뷰 div 스타일 */
 .section {
     margin-bottom: 20px; /* 하단 여백 추가 */
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> member3
-	border-bottom: 1px solid #ddd; /* 구분선 */
-}
-
-.section-title{
-	margin-top: 100px;
-<<<<<<< HEAD
-=======
     border-bottom: 1px solid #ddd; /* 구분선 */
 }
 
 .section-title{
     margin-top: 100px;
->>>>>>> origin/member
-=======
->>>>>>> member3
     margin-bottom: 50px;
     margin-left: 20px;
     font-size: 150%;
@@ -68,15 +46,7 @@
 }
 
 .product-row{
-<<<<<<< HEAD
-<<<<<<< HEAD
-	display: flex;
-=======
     display: flex;
->>>>>>> origin/member
-=======
-	display: flex;
->>>>>>> member3
     flex-wrap: wrap;
     margin: 50px 0;
 }
@@ -109,21 +79,6 @@
     height: 0; /* 높이를 0으로 설정하여 이미지가 보이지 않도록 함 */
     padding-top: 100%; /* 높이를 width 값에 맞추기 위해 너비의 비율인 100%로 설정 */
     position: relative; /* 포지션을 상대적으로 설정하여 내부 내용의 위치를 조정하기 위해 */
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> member3
-    overflow: hidden; /* 이미지가 넘치는 부분을 숨김 */	
-}
-
-.category-image img{
-	position: absolute; /* 이미지를 상위 요소에 대해 절대 위치로 설정하여 부모 요소의 크기에 맞게 조정 */
-    width: 100%; /* 부모 요소에 맞춰 크기 조절 */
-    height: auto; /* 높이 자동 조절 */
-	top: 0; /* 상단으로 정렬 */
-    left: 0; /* 왼쪽으로 정렬 */	
-<<<<<<< HEAD
-=======
     overflow: hidden; /* 이미지가 넘치는 부분을 숨김 */
 }
 
@@ -133,30 +88,14 @@
     height: auto; /* 높이 자동 조절 */
     top: 0; /* 상단으로 정렬 */
     left: 0; /* 왼쪽으로 정렬 */
->>>>>>> origin/member
-=======
->>>>>>> member3
 }
 
 /* 썸네일 이미지 스타일 */
 .product-image img {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> member3
-	position: absolute; /* 이미지를 상위 요소에 대해 절대 위치로 설정하여 부모 요소의 크기에 맞게 조정 */
-    width: 100%; /* 부모 요소에 맞춰 크기 조절 */
-    height: auto; /* 높이 자동 조절 */
-	top: 0; /* 상단으로 정렬 */
-<<<<<<< HEAD
-=======
     position: absolute; /* 이미지를 상위 요소에 대해 절대 위치로 설정하여 부모 요소의 크기에 맞게 조정 */
     width: 100%; /* 부모 요소에 맞춰 크기 조절 */
     height: auto; /* 높이 자동 조절 */
     top: 0; /* 상단으로 정렬 */
->>>>>>> origin/member
-=======
->>>>>>> member3
     left: 0; /* 왼쪽으로 정렬 */
     object-fit: cover;
     opacity: 0;
@@ -188,15 +127,7 @@
 }
 
 .page-row{
-<<<<<<< HEAD
-<<<<<<< HEAD
-	display: flex;
-=======
     display: flex;
->>>>>>> origin/member
-=======
-	display: flex;
->>>>>>> member3
     flex-direction: row;
     justify-content: center;
 }
@@ -218,44 +149,6 @@
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> member3
-    color: #919191;	
-}
-
-@media all and (max-width:767px) {
-	.product-box {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 10px 0;
-		width: 50%; /* 한 줄에 2개씩 표시 */
-		box-sizing: border-box; /* 가로 여백, 패딩을 포함한 크기 지정 */
-	}
-
-	#container {
-		position: relative;
-		width: 100%;
-		margin: 30px auto;
-		padding: 20px;
-		background-color: #ffffff;
-	}
-}
-
-.list-group .link {
-	display: block;
-	height: 100%;
-	width:100%;
-	position:absolut;
-	top: 0;
-	left: 0;
-	text-decoration: none;
-	color: black;
-	margin: 0 !important;
-<<<<<<< HEAD
-=======
     color: #919191;
 }
 
@@ -288,9 +181,6 @@
     text-decoration: none;
     color: black;
     margin: 0 !important;
->>>>>>> origin/member
-=======
->>>>>>> member3
 }
 
 .li-item {
