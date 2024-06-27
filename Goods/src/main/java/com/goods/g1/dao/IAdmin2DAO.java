@@ -4,7 +4,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 @Mapper
-public interface IAdminDAO_ {
+public interface IAdmin2DAO {
     void adminSwitch(@Param("userid") String userid);
-    void discardMember(String userid);
+    void discardMember(@Param("userid") String userid);
 }

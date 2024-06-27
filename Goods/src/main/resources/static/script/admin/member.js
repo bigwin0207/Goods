@@ -10,11 +10,10 @@ switchBtn.addEventListener("click", () => {
 		fetch('/admin/switchYN', {
 			method : 'POST',
 			headers: {
-				'Content-Type': 'application/json;charset=utf-8'
+				'Content-Type': 'application/json'
 			},
-				body: JSON.stringify({
-					"checkList" : checkBoxChecked(),
-				})
+				/*body: 'checkList=' + checkBoxChecked().join('&checkList=')*/
+			body: JSON.stringify(checkBoxChecked())
 			})
 			.then(response => response.json())
 			.then(jsonResult => {
@@ -37,11 +36,9 @@ discardBtn.addEventListener("click", () => {
 		fetch('/admin/discardMember', {
 			method : 'POST',
 			headers: {
-				'Content-Type': 'application/json;charset=utf-8'
+				'Content-Type': 'application/json'
 			},
-				body: JSON.stringify({
-					"checkList" : checkBoxChecked(),
-				})
+			body: JSON.stringify(checkBoxChecked())
 			})
 			.then(response => response.json())
 			.then(jsonResult => {
@@ -56,6 +53,33 @@ discardBtn.addEventListener("click", () => {
 		});
 	} else {
 		return;
+	}
+});
+
+
+$.ajax({
+
+	type: "POST",
+	url: "/admin/switchYN",
+	data: JSON.stringify(checkBoxChecked()),
+	success: function(response) {
+		alert('완료되었습니다'); // 혹은 다른 사용자 피드백 방법을 사용할 수 있음
+	},
+	error: function() {
+		alert('오류가 발생했습니다.');
+	}
+});
+
+$.ajax({
+
+	type: "POST",
+	url: "/admin/discardMember",
+	data: JSON.stringify(checkBoxChecked()),
+	success: function(response) {
+		alert('완료되었습니다'); // 혹은 다른 사용자 피드백 방법을 사용할 수 있음
+	},
+	error: function() {
+		alert('오류가 발생했습니다.');
 	}
 });
 

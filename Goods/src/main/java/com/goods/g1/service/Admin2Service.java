@@ -1,14 +1,14 @@
 package com.goods.g1.service;
 
-import com.goods.g1.dao.IAdminDAO_;
+import com.goods.g1.dao.IAdmin2DAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AdminService_ {
+public class Admin2Service {
 
     @Autowired
-    IAdminDAO_ adao1;
+    IAdmin2DAO adao1;
 
     public void adminSwitch(String[] userids) {
         for(String userid : userids)

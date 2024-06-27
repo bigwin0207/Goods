@@ -3,7 +3,7 @@
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.goods.g1.dao.IAdminDAO_">
+<mapper namespace="com.goods.g1.dao.IAdmin2DAO">
     <update id="adminSwitch">
         update member set is_login=is_login^1 where userid=#{userid}
     </update>
