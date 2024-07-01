@@ -14,7 +14,35 @@ public class AdminService {
         this.adminDAO = adminDAO;
     }
 
-    public List<MemberDTO> getMemberList() {
-        return adminDAO.getMemberList();
+    public List<MemberDTO> getMemberList(int limit, int offset) {
+        return adminDAO.getMemberList(limit, offset);
+    }
+    
+    public int getMemberTotal() {
+    	return adminDAO.getMemberTotal();
+    }
+    
+    public Object getQnaList(int limit, int offset) {
+		return adminDAO.getQnaList(limit, offset);
+	}
+    
+    public int getQnaTotal() {
+    	return adminDAO.getQnaTotal();
+    }
+    
+    public Object getReviewList(int limit, int offset) {
+		return adminDAO.getReviewList(limit, offset);
+	}
+
+    public int getReviewTotal() {
+    	return adminDAO.getReviewTotal();
+    }
+
+    public Object getNoticeList(int limit, int offset) {
+		return adminDAO.getNoticeList(limit, offset);
+	}
+    
+    public int getNoticeTotal() {
+    	return adminDAO.getNoticeTotal();
     }
 }

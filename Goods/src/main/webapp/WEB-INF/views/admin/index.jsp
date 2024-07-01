@@ -73,7 +73,7 @@
 									<li class="li-item">
 										<div class="d-flex justify-content-center align-items-center">
 											<div>${vo.userid}</div>
-			               					<div>${vo.grade}</div>
+			               					<div>${vo.gname}</div>
 			               					<div>${vo.name}</div>
 			               					<div>${vo.phone}</div>
 			               					<div>${vo.email}</div>
